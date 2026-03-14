@@ -1,0 +1,123 @@
+﻿
+> supporterfc-meilen@0.1.0 build
+> next build
+
+Ôû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+node.exe : ÔÜá The 
+"middleware" file 
+convention is 
+deprecated. Please use 
+"proxy" instead. Learn 
+more: https://nextjs.or
+g/docs/messages/middlew
+are-to-proxy
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Users\FOM022\AppDat
+a\Roaming ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (ÔÜá The "midd   
+ le...leware-to-pro    
+xy:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 47s
+  Running TypeScript ...
+Failed to compile.
+
+./i18n.ts:6:33
+Type error: Argument 
+of type '({ 
+requestLocale }: GetReq
+uestConfigParams) => 
+Promise<{ locale: 
+string | undefined; 
+messages: any; }>' is 
+not assignable to 
+parameter of type 
+'(params: GetRequestCon
+figParams) => 
+RequestConfig | Promise
+<RequestConfig>'.
+  Type 'Promise<{ 
+locale: string | 
+undefined; messages: 
+any; }>' is not 
+assignable to type 
+'RequestConfig | Promis
+e<RequestConfig>'.
+    Type 'Promise<{ 
+locale: string | 
+undefined; messages: 
+any; }>' is not 
+assignable to type 'Pro
+mise<RequestConfig>'.
+      Type '{ locale: 
+string | undefined; 
+messages: any; }' is 
+not assignable to type 
+'RequestConfig'.
+        Type '{ 
+locale: string | 
+undefined; messages: 
+any; }' is not 
+assignable to type '{ 
+locale: string; }'.
+          Types of 
+property 'locale' are 
+incompatible.
+            Type 
+'string | undefined' 
+is not assignable to 
+type 'string'.
+              Type 
+'undefined' is not 
+assignable to type 
+'string'.
+
+[0m [90m 4 |[39m 
+[36mexport[39m 
+[36mconst[39m 
+locales [33m=[39m [[
+32m'de'[39m[33m,[39m
+ [32m'en'[39m][33m;
+[39m
+ [90m 5 |[39m
+[31m[1m>[22m[39m[9
+0m 6 |[39m 
+[36mexport[39m 
+[36mdefault[39m getRe
+questConfig([36masync
+[39m ({ requestLocale 
+}) [33m=>[39m {
+ [90m   |[39m        
+                       
+  [31m[1m^[22m[39m
+ [90m 7 |[39m   
+[36mconst[39m locale 
+[33m=[39m 
+[36mawait[39m request
+Locale[33m;[39m
+ [90m 8 |[39m   
+[36mif[39m ([33m![3
+9mlocales[33m.[39minc
+ludes(locale 
+[36mas[39m any)) 
+notFound()[33m;[39m
+ [90m 9 |[39m   
+[36mreturn[39m {[0m
+Next.js build worker 
+exited with code: 1 
+and signal: null

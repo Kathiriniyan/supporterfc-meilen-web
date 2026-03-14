@@ -1,0 +1,69 @@
+import * as React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { sanityFetch } from '@/lib/sanity/fetch';
+import { BLOG_LIST_QUERY } from '@/lib/sanity/queries';
+import { urlFor } from '@/lib/sanity/image';
+import { Container } from '@/components/layout/Container';
+import { format } from 'date-fns';
+
+export const metadata = {
+  title: 'Blog & Stories - SupporterFC Meilen',
+  description: 'Latest news, match reports, and stories from the terraces.',
+};
+
+export default async function BlogPage() {
+  // In a real scenario, this fetches actual data. We'll simulate the array mapped to the schema.
+  const rawPosts = await sanityFetch<any[]>({ query: BLOG_LIST_QUERY }).catch(() => []);
+  
+  // Fallback mock data if Sanity is empty
+  const posts = rawPosts.length > 0 ? rawPosts : [
+    { _id: '1', title: 'The Derby Atmosphere', slug: { current: 'derby' }, publishedAt: new Date().toISOString(), excerpt: 'An unforgettable night under the floodlights.', category: { title: 'Matchday' } },
+    { _id: '2', title: '50 Years of History', slug: { current: '50-years' }, publishedAt: new Date(Date.now() - 86400000).toISOString(), excerpt: 'Looking back at our humble beginnings in 1975.', category: { title: 'Heritage' } },
+  ];
+
+  return (
+    <div className="pt-32 pb-24 bg-cream min-h-screen">
+      <Container>
+        <div className="mb-16 border-b border-ink/20 pb-8">
+          <h1 className="text-6xl md:text-8xl font-sans font-black uppercase text-ink tracking-tighter drop-shadow-sm">
+            Stories
+          </h1>
+          <p className="font-serif text-xl md:text-2xl text-ink/70 mt-6 italic max-w-2xl">
+            Match reports, heritage deep-dives, and announcements from the SupporterFC Meilen community.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <Link key={post._id} href={`/blog/${post.slug.current}`} className="group block bg-vintage border border-ink/20 hover:border-ink hover:shadow-[8px_8px_0_0_#F5A900] transition-all duration-300 pb-6 flex flex-col h-full">
+              <div className="aspect-[4/3] w-full bg-ink/5 mb-6 overflow-hidden border-b border-ink/20 grayscale group-hover:grayscale-0 transition-all duration-500 relative">
+                {post.coverImage ? (
+                  <Image src={urlFor(post.coverImage).url()} alt={post.title} fill className="object-cover" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center font-sans uppercase font-bold text-ink/20 text-sm tracking-widest">
+                    No Image
+                  </div>
+                )}
+              </div>
+              <div className="px-6 flex flex-col flex-1">
+                <span className="font-sans text-xs font-bold uppercase text-orange tracking-widest block mb-2">
+                  {post.category?.title || 'Uncategorized'} / {format(new Date(post.publishedAt), 'MMM dd, yyyy')}
+                </span>
+                <h2 className="font-sans text-2xl font-bold uppercase leading-tight mb-4 group-hover:text-gold transition-colors">
+                  {post.title}
+                </h2>
+                <p className="font-serif text-ink/70 line-clamp-3 leading-relaxed mb-4 flex-1">
+                  {post.excerpt || 'Read the full story to learn more about this post...'}
+                </p>
+                <div className="font-sans text-xs font-black uppercase tracking-widest text-ink mt-auto group-hover:underline underline-offset-4 decoration-2">
+                  Read Article
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Container>
+    </div>
+  );
+}

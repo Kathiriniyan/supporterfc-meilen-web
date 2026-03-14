@@ -1,0 +1,46 @@
+import { defineType, defineField } from 'sanity';
+
+export const galleryItem = defineType({
+  name: 'galleryItem',
+  title: 'Gallery Item',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'title',
+      title: 'Collection Title',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'year',
+      title: 'Year',
+      type: 'number',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: 'caption',
+              type: 'string',
+              title: 'Caption',
+            }),
+          ],
+        },
+      ],
+    }),
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'year',
+      media: 'images.0',
+    },
+  },
+});

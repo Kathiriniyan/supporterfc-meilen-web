@@ -1,0 +1,52 @@
+﻿
+> supporterfc-meilen@0.1.0 dev
+> next dev
+
+Ôû▓ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.68.63:3000
+- Environments: .env.local
+
+Ô£ô Starting...
+node.exe : ÔÜá The 
+"middleware" file 
+convention is 
+deprecated. Please use 
+"proxy" instead. Learn 
+more: https://nextjs.or
+g/docs/messages/middlew
+are-to-proxy
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Users\FOM022\AppDat
+a\Roaming ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : 
+NotSpecified    : (ÔÜá 
+The "middle.    
+..leware-to-proxy:S    
+tring) [], RemoteEx    
+ception
+    + 
+FullyQualifiedErr    
+orId : NativeComman    
+dError
+ 
+Ô£ô Ready in 1874ms
+Ôùï Compiling /[locale] ...
+ GET /en 200 in 8.0s (compile: 6.8s, proxy.ts: 184ms, render: 1085ms)
+ GET /en/join 200 in 2.5s (compile: 1843ms, proxy.ts: 11ms, render: 645ms)
+ GET /en 200 in 657ms (compile: 64ms, proxy.ts: 19ms, render: 575ms)
+ GET /en/about 200 in 8.9s (compile: 7.1s, proxy.ts: 25ms, render: 1759ms)
+ GET /de 200 in 2.5s (compile: 87ms, proxy.ts: 148ms, render: 2.3s)
+Ôùï Compiling /[locale]/blog ...
+ GET /en/blog 200 in 10.7s (compile: 8.2s, proxy.ts: 45ms, render: 2.5s)
+ GET /en/merchandise 200 in 6.5s (compile: 4.7s, proxy.ts: 22ms, render: 1793ms)
+ GET /en/blog 200 in 3.0s (compile: 139ms, proxy.ts: 146ms, render: 2.7s)
+ GET /en/merchandise 200 in 1881ms (compile: 111ms, proxy.ts: 36ms, render: 1733ms)
+ GET /en/about 200 in 624ms (compile: 26ms, proxy.ts: 12ms, render: 586ms)

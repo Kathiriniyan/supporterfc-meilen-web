@@ -1,0 +1,52 @@
+import { NextResponse } from 'next/server';
+import { sanityFetch } from '@/lib/sanity/fetch';
+import { groq } from 'next-sanity';
+
+const RSS_QUERY = groq`*[_type == "post"] | order(publishedAt desc)[0...15] { 
+  title, 
+  slug, 
+  excerpt, 
+  publishedAt,
+  content
+}`;
+
+export async function GET() {
+  try {
+    const posts = await sanityFetch<any[]>({ query: RSS_QUERY }).catch(() => []);
+    const baseUrl = 'https://supporterfc-meilen.ch';
+
+    const rssItems = posts
+      .map((post: any) => {
+        return `
+        <item>
+          <title><![CDATA[${post.title}]]></title>
+          <link>${baseUrl}/en/blog/${post.slug?.current}</link>
+          <guid isPermaLink="true">${baseUrl}/en/blog/${post.slug?.current}</guid>
+          <pubDate>${new Date(post.publishedAt || Date.now()).toUTCString()}</pubDate>
+          <description><![CDATA[${post.excerpt || ''}]]></description>
+        </item>`;
+      })
+      .join('');
+
+    const rssData = `<?xml version="1.0" encoding="UTF-8" ?>
+      <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+        <channel>
+          <title>SupporterFC Meilen News</title>
+          <link>${baseUrl}</link>
+          <description>Latest match reports, stories, and club updates.</description>
+          <language>en</language>
+          <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
+          ${rssItems}
+        </channel>
+      </rss>`;
+
+    return new NextResponse(rssData, {
+      headers: {
+        'Content-Type': 'application/xml; charset=utf-8',
+        'Cache-Control': 's-maxage=3600, stale-while-revalidate',
+      },
+    });
+  } catch (error) {
+    return new NextResponse('Error generating RSS feed', { status: 500 });
+  }
+}

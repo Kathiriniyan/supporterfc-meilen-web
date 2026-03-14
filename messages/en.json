@@ -1,0 +1,72 @@
+{
+    "Navigation": {
+        "home": "Home",
+        "about": "About",
+        "history": "50 Years of History",
+        "news": "News",
+        "gallery": "Gallery",
+        "merch": "Shop",
+        "join": "Join Us",
+        "contact": "Contact"
+    },
+    "Hero": {
+        "title": "50 Years SupporterFC Meilen",
+        "subtitle": "A community of passion and tradition since 1975."
+    },
+    "Intro": {
+        "year": "1975",
+        "overline": "OUR HISTORY BEGINS WITH PASSION",
+        "headline": "Through victories and defeats, our community stood together on the terraces.",
+        "p1": "Founded by a handful of devoted fans sharing a profound love for the game and their hometown, SupporterFC Meilen has grown into a cornerstone of local football culture. What began over a few beers post-match has evolved into a half-century legacy.",
+        "p2": "From coordinating our first away-day trips in the late 70s to organizing massive choreographies in the modern era, our spirit remains unchanged: unconditional support."
+    },
+    "Timeline": {
+        "title": "Milestones",
+        "subtitle": "Scroll through half a century",
+        "foundation": "The Foundation",
+        "victory": "Historic Victory",
+        "anniversary": "50th Anniversary",
+        "archivePhoto": "Archive Photo"
+    },
+    "Stories": {
+        "title": "Supporter Stories",
+        "subtitle": "Voice from the terraces",
+        "readAll": "Read All News",
+        "matchday": "Matchday",
+        "coverImage": "Cover Image",
+        "derbyTitle": "The Derby Atmosphere",
+        "derbyDesc": "Emotions ran high as the teams took the pitch. An unforgettable moment for every fan."
+    },
+    "Merch": {
+        "overline": "Official Merch",
+        "title": "Wear The Colours",
+        "subtitle": "Support the club directly. Exclusive anniversary gear available now.",
+        "productName": "Anniversary Scarf",
+        "oneSize": "One Size",
+        "shopAll": "Shop All Gear"
+    },
+    "Footer": {
+        "brandDesc": "A community of passion and tradition since 1975. Supporting football culture in Meilen.",
+        "menu": "Menu",
+        "newsletterTitle": "Newsletter",
+        "newsletterDesc": "Stay updated with our latest news and events.",
+        "emailPlaceholder": "Email address",
+        "subscribe": "Subscribe",
+        "rights": "All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+    },
+    "HistoryPage": {
+        "title": "50 Years of History",
+        "subtitle": "A half-century of passion, loyalty, and local tradition.",
+        "foundationTitle": "The Early Days",
+        "foundationDesc": "In the 70s, it all began with a group of friends who wanted to be more than just spectators. They wanted to be the soul of the club.",
+        "milestone1Title": "Loyalty over Generations",
+        "milestone1Desc": "From promotion to relegation, we stayed. Our colors fly proudly in every stadium.",
+        "milestone2Title": "Culture & Choreo",
+        "milestone2Desc": "The introduction of our first major choreographies marked a turning point in Swiss fan culture.",
+        "milestone3Title": "The 50th Anniversary",
+        "milestone3Desc": "Today we celebrate not just a club, but a family that has existed since 1975.",
+        "cta": "Join Us & Make History"
+    }
+}

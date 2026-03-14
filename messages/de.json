@@ -1,0 +1,72 @@
+{
+  "Navigation": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "history": "50 Jahre Geschichte",
+    "news": "News",
+    "gallery": "Galerie",
+    "merch": "Shop",
+    "join": "Mitglied Werden",
+    "contact": "Kontakt"
+  },
+  "Hero": {
+    "title": "50 Jahre SupporterFC Meilen",
+    "subtitle": "Eine Gemeinschaft von Leidenschaft und Tradition seit 1975."
+  },
+  "Intro": {
+    "year": "1975",
+    "overline": "UNSERE GESCHICHTE BEGINNT MIT LEIDENSCHAFT",
+    "headline": "In Siegen und Niederlagen stand unsere Gemeinschaft zusammen auf den Rängen.",
+    "p1": "Gegründet von einer Handvoll hingebungsvoller Fans, die eine tiefe Liebe zum Spiel und ihrer Heimatstadt teilen, ist der SupporterFC Meilen zu einem Eckpfeiler der lokalen Fussballkultur geworden. Was bei ein paar Bieren nach dem Spiel begann, hat sich zu einem Vermächtnis über ein halbes Jahrhundert entwickelt.",
+    "p2": "Von der Koordination unserer ersten Auswärtsfahrten in den späten 70ern bis hin zur Organisation massiver Choreografien in der modernen Ära bleibt unser Geist unverändert: bedingungslose Unterstützung."
+  },
+  "Timeline": {
+    "title": "Meilensteine",
+    "subtitle": "Scrollen Sie durch ein halbes Jahrhundert",
+    "foundation": "Die Gründung",
+    "victory": "Historischer Sieg",
+    "anniversary": "50-jähriges Jubiläum",
+    "archivePhoto": "Archivfoto"
+  },
+  "Stories": {
+    "title": "Supporter Geschichten",
+    "subtitle": "Stimmen von den Rängen",
+    "readAll": "Alle News lesen",
+    "matchday": "Spieltag",
+    "coverImage": "Titelbild",
+    "derbyTitle": "Die Derby-Atmosphäre",
+    "derbyDesc": "Die Emotionen kochten hoch, als die Mannschaften das Spielfeld betraten. Ein unvergesslicher Moment für jeden Fan."
+  },
+  "Merch": {
+    "overline": "Offizielles Merch",
+    "title": "Trage die Farben",
+    "subtitle": "Unterstützen Sie den Club direkt. Exklusive Jubiläumsausrüstung jetzt verfügbar.",
+    "productName": "Jubiläums-Schal",
+    "oneSize": "Einheitsgrösse",
+    "shopAll": "Alle Fanartikel ansehen"
+  },
+  "Footer": {
+    "brandDesc": "Eine Gemeinschaft von Leidenschaft und Tradition seit 1975. Wir unterstützen die Fussballkultur in Meilen.",
+    "menu": "Menü",
+    "newsletterTitle": "Newsletter",
+    "newsletterDesc": "Bleiben Sie auf dem Laufenden mit unseren neuesten Nachrichten und Veranstaltungen.",
+    "emailPlaceholder": "E-Mail-Adresse",
+    "subscribe": "Abonnieren",
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen"
+  },
+  "HistoryPage": {
+    "title": "50 Jahre Geschichte",
+    "subtitle": "Ein halbes Jahrhundert voller Leidenschaft, Loyalität und lokaler Tradition.",
+    "foundationTitle": "Die frühen Tage",
+    "foundationDesc": "In den 70er Jahren begann alles mit einer Gruppe von Freunden, die mehr als nur Zuschauer sein wollten. Sie wollten die Seele des Vereins sein.",
+    "milestone1Title": "Treue über Generationen",
+    "milestone1Desc": "Vom Aufstieg bis zum Abstieg, wir sind geblieben. Unsere Farben wehen stolz in jedem Stadion.",
+    "milestone2Title": "Kultur & Choreo",
+    "milestone2Desc": "Die Einführung unserer ersten grossen Choreos markierte einen Wendepunkt in der Schweizer Fankultur.",
+    "milestone3Title": "Das 50. Jubiläum",
+    "milestone3Desc": "Heute feiern wir nicht nur einen Verein, sondern eine Familie, die seit 1975 besteht.",
+    "cta": "Mitglied werden & Geschichte schreiben"
+  }
+}
