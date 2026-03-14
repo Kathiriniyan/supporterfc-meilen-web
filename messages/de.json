@@ -68,5 +68,79 @@
     "milestone3Title": "Das 50. Jubiläum",
     "milestone3Desc": "Heute feiern wir nicht nur einen Verein, sondern eine Familie, die seit 1975 besteht.",
     "cta": "Mitglied werden & Geschichte schreiben"
+  },
+  "Contact": {
+    "overline": "Kontaktieren Sie uns",
+    "title": "Kontakt",
+    "hq": "Hauptquartier",
+    "formTitle": "Senden Sie uns eine Nachricht",
+    "nameLabel": "Vollständiger Name *",
+    "emailLabel": "E-Mail-Adresse *",
+    "subjectLabel": "Betreff *",
+    "messageLabel": "Nachricht *",
+    "sendButton": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erhalten. Wir werden uns bald bei Ihnen melden.",
+    "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",
+    "subjects": {
+      "general": "Allgemeine Anfrage",
+      "away_tickets": "Auswärtstickets",
+      "choreo": "Choreografie-Beitrag",
+      "press": "Presse & Medien"
+    },
+    "addressTitle": "Offizielle Adresse",
+    "mapTitle": "Meilen Stadion",
+    "mapSubtitle": "Wo wir an Spieltagen stehen."
+  },
+  "About": {
+    "overline": "Unsere Identität",
+    "title": "Gegen modernen Fussball",
+    "subtitle": "Wir stehen für Tradition, lokalen Stolz und 90 Minuten bedingungslose lautstarke Unterstützung.",
+    "foundationTitle": "Der Gründungsmythos",
+    "foundationDesc1": "Im Herbst 1975 stand eine Gruppe von Freunden im Regen hinter dem Tor und sah zu, wie Meilen ein enges Spiel verlor. Anstatt zu gehen, begannen sie zu singen. Dieser einzige Akt des Widerstands gegen das Wetter und den Spielstand gebar eine Bewegung.",
+    "foundationDesc2": "Seit fünf Jahrzehnten ist der SupporterFC Meilen das schlagende Herz unseres Stadions. Wir sind nicht nur Fans; wir sind der 12. Mann. Wir organisieren die Choreografien, wir finanzieren die Auswärtsbusse und wir sorgen dafür, dass der Geist des lokalen Fussballs niemals stirbt.",
+    "solidarityTitle": "Gemeinschaft & Solidarität",
+    "solidarityDesc1": "Unser Club ist mehr als 90 Minuten an einem Samstag. Er ist eine Familie. SupporterFC Meilen organisiert aktiv Wohltätigkeitsveranstaltungen, Jugendturniere und lokale Gemeinschaftshilfe.",
+    "solidarityDesc2": "Wir glauben, dass Fussball den Menschen gehört. Wir lehnen die Hyper-Kommerzialisierung des Sports ab und kämpfen dafür, die Ticketpreise erschwinglich zu halten, damit jeder in Meilen, unabhängig vom Hintergrund, mit uns auf den Rängen stehen kann.",
+    "pillarsTitle": "Die drei Säulen",
+    "pillar1Title": "Loyalität",
+    "pillar1Desc": "Durch die Ligen, durch die Jahrzehnte. Wir gehen nie früher.",
+    "pillar2Title": "Unabhängigkeit",
+    "pillar2Desc": "Selbstfinanziert, selbstorganisiert. Wir schulden modernen Sponsoren nichts.",
+    "pillar3Title": "Leidenschaft",
+    "pillar3Desc": "Lauter Gesang, Pyrotechnik und absolute Hingabe zu den Farben.",
+    "president": {
+      "overline": "Führung",
+      "title": "Unser Präsident",
+      "name": "Hans Muster",
+      "bio": "Seit 1985 Mitglied und seit 2010 an der Spitze. Hans verkörpert die Werte von Meilen wie kein anderer.",
+      "contact": "Präsident@supporterfc-meilen.ch"
+    },
+    "team": {
+      "title": "Das Team",
+      "subtitle": "Die Menschen hinter der Leidenschaft.",
+      "members": {
+        "m1": {
+          "name": "Sarah Keller",
+          "role": "Vize-Präsidentin",
+          "code": "SK-75"
+        },
+        "m2": {
+          "name": "Marco Rossi",
+          "role": "Finanzen",
+          "code": "MR-82"
+        },
+        "m3": {
+          "name": "Luca Weber",
+          "role": "Choreo-Leiter",
+          "code": "LW-99"
+        },
+        "m4": {
+          "name": "Elena Fischer",
+          "role": "Events",
+          "code": "EF-05"
+        }
+      }
+    }
   }
 }

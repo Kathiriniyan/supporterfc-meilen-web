@@ -68,5 +68,79 @@
         "milestone3Title": "The 50th Anniversary",
         "milestone3Desc": "Today we celebrate not just a club, but a family that has existed since 1975.",
         "cta": "Join Us & Make History"
+    },
+    "Contact": {
+        "overline": "Get in touch",
+        "title": "Contact",
+        "hq": "Headquarters",
+        "formTitle": "Send a Message",
+        "nameLabel": "Full Name *",
+        "emailLabel": "Email Address *",
+        "subjectLabel": "Subject *",
+        "messageLabel": "Message *",
+        "sendButton": "Send Message",
+        "sending": "Sending...",
+        "success": "Message Received. We will get back to you soon.",
+        "error": "Something went wrong. Please try again.",
+        "subjects": {
+            "general": "General Inquiry",
+            "away_tickets": "Away Tickets",
+            "choreo": "Choreography Contribution",
+            "press": "Press & Media"
+        },
+        "addressTitle": "Official Address",
+        "mapTitle": "Meilen Stadium",
+        "mapSubtitle": "Where we stand on Matchdays."
+    },
+    "About": {
+        "overline": "Our Identity",
+        "title": "Against Modern Football",
+        "subtitle": "We stand for tradition, local pride, and 90 minutes of unconditional vocal support.",
+        "foundationTitle": "The Founding Myth",
+        "foundationDesc1": "In the autumn of 1975, a group of friends stood behind the goal in the rain, watching Meilen lose a tight game. Instead of leaving, they started singing. That single act of defiance against the weather and the scoreline birthed a movement.",
+        "foundationDesc2": "For five decades, SupporterFC Meilen has been the beating heart of our stadium. We aren't just fans; we are the 12th man. We organize the choreographies, we fund the away buses, and we ensure the spirit of local football never dies.",
+        "solidarityTitle": "Community & Solidarity",
+        "solidarityDesc1": "Our club is more than 90 minutes on a Saturday. It is a family. SupporterFC Meilen actively organizes charitable events, youth tournaments, and local community aid.",
+        "solidarityDesc2": "We believe football belongs to the people. We reject the hyper-commercialization of the sport and fight to keep ticket prices accessible so that everyone in Meilen, regardless of background, can stand on the terraces with us.",
+        "pillarsTitle": "The Three Pillars",
+        "pillar1Title": "Loyalty",
+        "pillar1Desc": "Through the leagues, through the decades. We never leave early.",
+        "pillar2Title": "Independence",
+        "pillar2Desc": "Self-funded, self-organized. We owe nothing to modern sponsors.",
+        "pillar3Title": "Passion",
+        "pillar3Desc": "Loud singing, pyrotechnics, and absolute dedication to the colors.",
+        "president": {
+            "overline": "Leadership",
+            "title": "Our President",
+            "name": "Hans Muster",
+            "bio": "Member since 1985 and at the forefront since 2010. Hans embodies the values of Meilen like no other.",
+            "contact": "president@supporterfc-meilen.ch"
+        },
+        "team": {
+            "title": "The Team",
+            "subtitle": "The people behind the passion.",
+            "members": {
+                "m1": {
+                    "name": "Sarah Keller",
+                    "role": "Vice-President",
+                    "code": "SK-75"
+                },
+                "m2": {
+                    "name": "Marco Rossi",
+                    "role": "Finance",
+                    "code": "MR-82"
+                },
+                "m3": {
+                    "name": "Luca Weber",
+                    "role": "Choreo Lead",
+                    "code": "LW-99"
+                },
+                "m4": {
+                    "name": "Elena Fischer",
+                    "role": "Events",
+                    "code": "EF-05"
+                }
+            }
+        }
     }
 }
