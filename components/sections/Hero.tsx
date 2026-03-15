@@ -4,6 +4,7 @@ import * as React from 'react';
 import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 import { Container } from '../layout/Container';
+import Image from 'next/image';
 
 interface HeroProps {
   title?: string;
@@ -18,6 +19,7 @@ export function HeroSection({ title: propTitle, subtitle: propSubtitle }: HeroPr
   const containerRef = React.useRef<HTMLDivElement>(null);
   const boxRef = React.useRef<HTMLDivElement>(null);
   const textRef = React.useRef<HTMLHeadingElement>(null);
+  const logoRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const ctx = gsap.context(() => {
@@ -25,6 +27,7 @@ export function HeroSection({ title: propTitle, subtitle: propSubtitle }: HeroPr
 
       gsap.set(boxRef.current, { y: 100, opacity: 0, scale: 0.95 });
       gsap.set(textRef.current, { opacity: 0, y: 30 });
+      gsap.set(logoRef.current, { opacity: 0, scale: 0.5, rotate: -20 });
 
       tl.to(boxRef.current, {
         y: 0,
@@ -41,6 +44,16 @@ export function HeroSection({ title: propTitle, subtitle: propSubtitle }: HeroPr
           ease: 'power3.out',
         },
         '-=0.6'
+      ).to(
+        logoRef.current,
+        {
+          opacity: 1,
+          scale: 1,
+          rotate: 3,
+          duration: 1,
+          ease: 'back.out(1.7)',
+        },
+        '-=0.4'
       );
     }, containerRef);
 
@@ -94,6 +107,22 @@ export function HeroSection({ title: propTitle, subtitle: propSubtitle }: HeroPr
           {/* Decorative Corner Accents */}
           <div className="absolute top-4 left-4 w-12 h-12 border-t-4 border-l-4 border-gold z-40" />
           <div className="absolute bottom-4 right-4 w-12 h-12 border-b-4 border-r-4 border-orange z-40" />
+
+          {/* Anniversary Logo - Small Version */}
+          <div
+            ref={logoRef}
+            className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-40 w-24 h-24 md:w-32 md:h-32 transition-transform duration-500 hover:rotate-0"
+          >
+            <div className="absolute inset-0 bg-ink translate-x-1.5 translate-y-1.5 md:translate-x-2 md:translate-y-2" />
+            <div className="absolute inset-0 border-2 md:border-4 border-ink bg-white p-2">
+              <Image
+                src="/50th_logo.png"
+                alt="50th Anniversary Logo"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+          </div>
         </div>
       </Container>
     </section>

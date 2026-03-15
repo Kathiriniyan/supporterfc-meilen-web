@@ -4,7 +4,7 @@ import * as React from 'react';
 import { useTranslations } from 'next-intl';
 import { Container } from '../layout/Container';
 import { Button } from '../ui/Button';
-import Link from 'next/link';
+import Image from 'next/image';
 
 export function AnniversaryIntro() {
   const t = useTranslations('Intro');
@@ -15,10 +15,21 @@ export function AnniversaryIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
 
           {/* Big Number Column */}
-          <div className="lg:col-span-5 flex items-start">
+          <div className="lg:col-span-5 flex flex-col items-center lg:items-start space-y-8">
             <h2 className="text-[8rem] sm:text-[12rem] lg:text-[16rem] font-sans font-black text-ink leading-none tracking-tighter drop-shadow-[8px_8px_0_rgba(245,169,0,1)]">
               {t('year')}
             </h2>
+            <div className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rotate-3 hover:rotate-0 transition-transform duration-500">
+              <div className="absolute inset-0 bg-ink translate-x-3 translate-y-3" />
+              <div className="absolute inset-0 border-4 border-ink bg-white p-4">
+                <Image
+                  src="/50th_logo.png"
+                  alt="50th Anniversary Logo"
+                  fill
+                  className="object-contain p-4"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Text Column */}
