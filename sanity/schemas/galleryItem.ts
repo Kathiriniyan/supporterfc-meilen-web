@@ -42,5 +42,12 @@ export const galleryItem = defineType({
       subtitle: 'year',
       media: 'images.0',
     },
+    prepare({ title, subtitle, media }) {
+      return {
+        title: title?.en || title?.de || 'Untitled',
+        subtitle: String(subtitle || ''),
+        media,
+      };
+    },
   },
 });

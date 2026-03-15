@@ -1,18 +1,29 @@
 import * as React from 'react';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
+import { getTranslations } from 'next-intl/server';
 import { sanityFetch } from '@/lib/sanity/fetch';
 import { BLOG_LIST_QUERY } from '@/lib/sanity/queries';
 import { urlFor } from '@/lib/sanity/image';
 import { Container } from '@/components/layout/Container';
 import { format } from 'date-fns';
 
-export const metadata = {
-  title: 'Blog & Stories - SupporterFC Meilen',
-  description: 'Latest news, match reports, and stories from the terraces.',
-};
+interface Props {
+  params: Promise<{ locale: string }>;
+}
 
-export default async function BlogPage() {
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'BlogPage' });
+  return {
+    title: `${t('title')} - SupporterFC Meilen`,
+    description: t('subtitle'),
+  };
+}
+
+export default async function BlogPage({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'BlogPage' });
   // In a real scenario, this fetches actual data. We'll simulate the array mapped to the schema.
   const rawPosts = await sanityFetch<any[]>({ query: BLOG_LIST_QUERY }).catch(() => []);
 
@@ -27,10 +38,10 @@ export default async function BlogPage() {
       <Container>
         <div className="mb-16 border-b border-ink/20 pb-8">
           <h1 className="text-6xl md:text-8xl font-sans font-black uppercase text-ink tracking-tighter drop-shadow-sm">
-            Stories
+            {t('title')}
           </h1>
           <p className="font-serif text-xl md:text-2xl text-ink/70 mt-6 italic max-w-2xl">
-            Match reports, heritage deep-dives, and announcements from the SupporterFC Meilen community.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -42,13 +53,13 @@ export default async function BlogPage() {
                   <Image src={urlFor(post.coverImage).url()} alt={post.title} fill className="object-cover" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center font-sans uppercase font-bold text-ink/20 text-sm tracking-widest">
-                    No Image
+                    {t('noImage')}
                   </div>
                 )}
               </div>
               <div className="px-6 flex flex-col flex-1">
                 <span className="font-sans text-xs font-bold uppercase text-orange tracking-widest block mb-2">
-                  {post.category?.title || 'Uncategorized'} / {format(new Date(post.publishedAt), 'MMM dd, yyyy')}
+                  {post.category?.title || t('uncategorized')} / {format(new Date(post.publishedAt), 'MMM dd, yyyy')}
                 </span>
                 <h2 className="font-sans text-2xl font-bold uppercase leading-tight mb-4 group-hover:text-gold transition-colors">
                   {post.title}
@@ -57,7 +68,7 @@ export default async function BlogPage() {
                   {post.excerpt || 'Read the full story to learn more about this post...'}
                 </p>
                 <div className="font-sans text-xs font-black uppercase tracking-widest text-ink mt-auto group-hover:underline underline-offset-4 decoration-2">
-                  Read Article
+                  {t('readArticle')}
                 </div>
               </div>
             </Link>

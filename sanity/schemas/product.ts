@@ -8,14 +8,14 @@ export const product = defineType({
     defineField({
       name: 'name',
       title: 'Name',
-      type: 'string',
+      type: 'localeString',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: { source: 'name' },
+      options: { source: 'name.en' },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -58,7 +58,7 @@ export const product = defineType({
     prepare(selection) {
       const { title, subtitle, media } = selection;
       return {
-        title,
+        title: title?.en || title?.de || 'Untitled',
         subtitle: subtitle ? `CHF ${subtitle}` : '',
         media,
       };

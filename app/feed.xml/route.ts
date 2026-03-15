@@ -16,17 +16,25 @@ export async function GET() {
     const posts = await sanityFetch<any[]>({ query: RSS_QUERY }).catch(() => []);
     const baseUrl = 'https://supporterfc-meilen.ch';
 
+    const getStr = (obj: any) => {
+      if (!obj) return '';
+      if (typeof obj === 'string') return obj;
+      return obj.en || obj.de || '';
+    };
+
     const rssItems = posts
       .map((post: any) => {
         const path = post._type === 'news' ? '/en/news/' : '/en/blog/';
         const link = `${baseUrl}${path}${post.slug?.current}`;
+        const title = getStr(post.title);
+        const excerpt = getStr(post.excerpt);
         return `
         <item>
-          <title><![CDATA[${post.title}]]></title>
+          <title><![CDATA[${title}]]></title>
           <link>${link}</link>
           <guid isPermaLink="true">${link}</guid>
           <pubDate>${new Date(post.publishedAt || Date.now()).toUTCString()}</pubDate>
-          <description><![CDATA[${post.excerpt || ''}]]></description>
+          <description><![CDATA[${excerpt}]]></description>
         </item>`;
       })
       .join('');

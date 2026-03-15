@@ -14,7 +14,7 @@ export const timelineItem = defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'localeString',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -35,6 +35,13 @@ export const timelineItem = defineType({
       title: 'title',
       subtitle: 'year',
       media: 'image',
+    },
+    prepare({ title, subtitle, media }) {
+      return {
+        title: title?.en || title?.de || 'Untitled',
+        subtitle: String(subtitle || ''),
+        media,
+      };
     },
   },
 });

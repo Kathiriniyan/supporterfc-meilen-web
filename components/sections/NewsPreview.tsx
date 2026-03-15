@@ -6,8 +6,9 @@ import { sanityFetch } from '@/lib/sanity/fetch';
 import { NEWS_LIST_QUERY } from '@/lib/sanity/queries';
 import { format } from 'date-fns';
 import { ArrowRight } from 'lucide-react';
+import { getLocalized } from '@/lib/utils/locale';
 
-export async function NewsPreview() {
+export async function NewsPreview({ locale }: { locale: string }) {
     const t = await getTranslations('News');
     const rawPosts = await sanityFetch<any[]>({ query: NEWS_LIST_QUERY }).catch(() => []);
 
@@ -49,7 +50,7 @@ export async function NewsPreview() {
                                     {format(new Date(post.publishedAt), 'MMM dd, yyyy')}
                                 </time>
                                 <h3 className="font-sans text-2xl md:text-3xl font-bold uppercase leading-tight group-hover:text-gold transition-colors">
-                                    {post.title}
+                                    {getLocalized(post.title, locale)}
                                 </h3>
                             </div>
                             <div className="text-ink/30 group-hover:text-ink transition-colors mt-4 md:mt-0">

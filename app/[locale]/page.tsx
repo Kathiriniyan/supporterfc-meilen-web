@@ -6,14 +6,19 @@ import { GalleryPreview } from '@/components/sections/GalleryPreview';
 import { SupporterStoriesPreview } from '@/components/sections/Stories';
 import { MerchPreview } from '@/components/sections/Merch';
 
-export default function HomePage() {
+interface Props {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params;
   return (
     <>
       <HeroSection />
       <AnniversaryIntro />
       <TimelinePreview />
-      <NewsPreview />
-      <GalleryPreview />
+      <NewsPreview locale={locale} />
+      <GalleryPreview locale={locale} />
       <SupporterStoriesPreview />
       <MerchPreview />
     </>

@@ -158,5 +158,58 @@
                 }
             }
         }
+    },
+    "NewsPage": {
+        "title": "News",
+        "subtitle": "Important announcements, travel info, and quick updates.",
+        "backToNews": "Back to News",
+        "notFound": "News item not found or mock data being viewed.",
+        "noDetails": "No additional details provided."
+    },
+    "BlogPage": {
+        "title": "Stories",
+        "subtitle": "Match reports, heritage deep-dives, and announcements from the SupporterFC Meilen community.",
+        "noImage": "No Image",
+        "uncategorized": "Uncategorized",
+        "readArticle": "Read Article",
+        "backToStories": "Back to Stories",
+        "notFound": "Post not found in Sanity. This is a design placeholder.",
+        "noContent": "No content available.",
+        "author": "Author"
+    },
+    "MerchPage": {
+        "overline": "Merchandise",
+        "title": "Wear The Colours",
+        "subtitle": "Every purchase goes directly into funding stadium choreographies, away trips, and our community initiatives. No profit mentality."
+    },
+    "MerchDetail": {
+        "backToShop": "Shop All Gear",
+        "officialMerch": "Official Merchandise",
+        "buyNow": "Buy Now on Official Store",
+        "noImage": "No Image Available",
+        "noDescription": "No description available for this product.",
+        "securePayment": "Transactions are handled securely via spreadshirt",
+        "productNotFound": "Product not found. Mock layout rendering..."
+    },
+    "JoinPage": {
+        "overline": "Membership",
+        "title": "Become a",
+        "titleHighlight": "Supporter",
+        "subtitle": "Join the SupporterFC Meilen family. By becoming a registered member, you directly fund our choreographies, away buses, and the ongoing fight to keep football authentic.",
+        "standardTitle": "Standard Member",
+        "standardDesc": "50 CHF / Year. Voting rights at the general assembly and priority ticketing for away derbies.",
+        "lifetimeTitle": "Lifetime Legacy",
+        "lifetimeDesc": "1000 CHF / Once. Immortalized on the stadium plaque, exclusive legacy scarf, and life-long AGM voting rights.",
+        "formTitle": "Registration Form",
+        "nameLabel": "Full Name *",
+        "emailLabel": "Email Address *",
+        "phoneLabel": "Phone Number",
+        "levelLabel": "Membership Level *",
+        "standardOption": "Standard Member (50 CHF/Year)",
+        "lifetimeOption": "Lifetime Legacy (1000 CHF)",
+        "submitButton": "Submit Application",
+        "submitting": "Submitting...",
+        "success": "Application Received. We will contact you shortly with payment details.",
+        "error": "Something went wrong. Please try again."
     }
 }

@@ -1,25 +1,36 @@
 import * as React from 'react';
 import { Link } from '@/i18n/navigation';
+import { getTranslations } from 'next-intl/server';
 import { sanityFetch } from '@/lib/sanity/fetch';
 import { NEWS_LIST_QUERY } from '@/lib/sanity/queries';
 import { Container } from '@/components/layout/Container';
 import { format } from 'date-fns';
 import { ArrowRight } from 'lucide-react';
 
-export const metadata = {
-  title: 'News - SupporterFC Meilen',
-  description: 'Fast, timestamped club announcements and short updates.',
-};
+interface Props {
+  params: Promise<{ locale: string }>;
+}
 
-export default async function NewsPage() {
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'NewsPage' });
+  return {
+    title: `${t('title')} - SupporterFC Meilen`,
+    description: t('subtitle'),
+  };
+}
+
+export default async function NewsPage({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'NewsPage' });
   const rawPosts = await sanityFetch<any[]>({ query: NEWS_LIST_QUERY }).catch(() => []);
 
   // Filter for news (in a real app, query by a specific 'News' category slug)
   const posts = rawPosts.length > 0 ? rawPosts : [
-    { _id: '1', title: 'Away Bus to Winterthur Fully Booked', slug: { current: 'bus-winterthur' }, publishedAt: new Date().toISOString() },
-    { _id: '2', title: 'Choreo Prep Meeting This Thursday', slug: { current: 'choreo-prep' }, publishedAt: new Date(Date.now() - 86400000).toISOString() },
-    { _id: '3', title: 'New Scarf Design Dropping Next Week', slug: { current: 'new-scarf' }, publishedAt: new Date(Date.now() - 172800000).toISOString() },
-    { _id: '4', title: 'Stand Together: Statement on Ticket Prices', slug: { current: 'statement-tickets' }, publishedAt: new Date(Date.now() - 259200000).toISOString() },
+    { _id: '1', title: 'Away Bus to Winterthur Fully Booked', slug: { current: 'bus-winterthur' }, publishedAt: '2026-03-15T12:00:00Z' },
+    { _id: '2', title: 'Choreo Prep Meeting This Thursday', slug: { current: 'choreo-prep' }, publishedAt: '2026-03-14T12:00:00Z' },
+    { _id: '3', title: 'New Scarf Design Dropping Next Week', slug: { current: 'new-scarf' }, publishedAt: '2026-03-13T12:00:00Z' },
+    { _id: '4', title: 'Stand Together: Statement on Ticket Prices', slug: { current: 'statement-tickets' }, publishedAt: '2026-03-12T12:00:00Z' },
   ];
 
   return (
@@ -27,10 +38,10 @@ export default async function NewsPage() {
       <Container className="max-w-7xl">
         <header className="mb-16 border-b border-ink/20 pb-8">
           <h1 className="text-6xl md:text-8xl font-sans font-black uppercase text-ink tracking-tighter drop-shadow-sm">
-            News
+            {t('title')}
           </h1>
           <p className="font-serif text-xl md:text-2xl text-ink/70 mt-4 italic max-w-2xl">
-            Important announcements, travel info, and quick updates.
+            {t('subtitle')}
           </p>
         </header>
 

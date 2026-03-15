@@ -1,5 +1,6 @@
 import * as React from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
+import { getTranslations } from 'next-intl/server';
 import { sanityFetch } from '@/lib/sanity/fetch';
 import { NEWS_DETAIL_QUERY } from '@/lib/sanity/queries';
 import { Container } from '@/components/layout/Container';
@@ -8,7 +9,7 @@ import { format } from 'date-fns';
 import { ArrowLeft } from 'lucide-react';
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function NewsDetail({ params }: Props) {
   const resolvedParams = await params;
+  const t = await getTranslations({ locale: resolvedParams.locale, namespace: 'NewsPage' });
   const post: any = await sanityFetch({
     query: NEWS_DETAIL_QUERY,
     params: { slug: resolvedParams.slug },
@@ -34,10 +36,10 @@ export default async function NewsDetail({ params }: Props) {
       <div className="pt-32 pb-24 bg-cream min-h-screen">
         <Container className="max-w-3xl">
           <Link href="/news" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
-            <ArrowLeft size={16} /> Back to News
+            <ArrowLeft size={16} /> {t('backToNews')}
           </Link>
           <div className="p-8 border border-ink/20 text-center font-serif text-xl italic text-ink/60 bg-vintage">
-            News item not found or mock data being viewed.
+            {t('notFound')}
           </div>
         </Container>
       </div>
@@ -49,7 +51,7 @@ export default async function NewsDetail({ params }: Props) {
     <article className="pt-32 pb-24 bg-cream min-h-screen">
       <Container className="max-w-3xl">
         <Link href="/news" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
-          <ArrowLeft size={16} /> Back to News
+          <ArrowLeft size={16} /> {t('backToNews')}
         </Link>
 
         <header className="mb-12 border-b border-ink/20 pb-8">
@@ -63,7 +65,7 @@ export default async function NewsDetail({ params }: Props) {
 
         <div className="prose prose-lg md:prose-xl max-w-none text-ink/90 bg-vintage border border-ink/10 p-6 md:p-12 shadow-[4px_4px_0_0_rgba(11,12,16,0.1)]">
           {post.content ? <RichText content={post.content} /> : (
-            <p className="font-serif italic text-ink/60">No additional details provided.</p>
+            <p className="font-serif italic text-ink/60">{t('noDetails')}</p>
           )}
         </div>
       </Container>

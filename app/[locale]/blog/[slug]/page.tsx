@@ -2,6 +2,7 @@ import * as React from 'react';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import { notFound } from 'next/navigation';
+import { getTranslations } from 'next-intl/server';
 import { sanityFetch } from '@/lib/sanity/fetch';
 import { BLOG_DETAIL_QUERY } from '@/lib/sanity/queries';
 import { urlFor } from '@/lib/sanity/image';
@@ -11,7 +12,7 @@ import { format } from 'date-fns';
 import { ArrowLeft } from 'lucide-react';
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function BlogPostPage({ params }: Props) {
   const resolvedParams = await params;
+  const t = await getTranslations({ locale: resolvedParams.locale, namespace: 'BlogPage' });
   const post: any = await sanityFetch({
     query: BLOG_DETAIL_QUERY,
     params: { slug: resolvedParams.slug },
@@ -38,10 +40,10 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="pt-32 pb-24 bg-vintage min-h-screen">
         <Container className="max-w-4xl">
           <Link href="/blog" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
-            <ArrowLeft size={16} /> Back to Stories
+            <ArrowLeft size={16} /> {t('backToStories')}
           </Link>
           <div className="p-8 border-2 border-dashed border-ink/20 text-center font-serif text-xl italic text-ink/60">
-            Post not found in Sanity. This is a design placeholder.
+            {t('notFound')}
           </div>
         </Container>
       </div>
@@ -52,7 +54,7 @@ export default async function BlogPostPage({ params }: Props) {
     <article className="pt-32 pb-24 bg-vintage min-h-screen">
       <Container className="max-w-4xl">
         <Link href="/blog" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
-          <ArrowLeft size={16} /> Back to Stories
+          <ArrowLeft size={16} /> {t('backToStories')}
         </Link>
 
         <header className="mb-16">
@@ -74,7 +76,7 @@ export default async function BlogPostPage({ params }: Props) {
               )}
               <div>
                 <p className="font-sans font-bold uppercase tracking-tight text-sm">{post.author.name}</p>
-                <p className="font-serif text-ink/60 text-sm italic">Author</p>
+                <p className="font-serif text-ink/60 text-sm italic">{t('author')}</p>
               </div>
             </div>
           )}
@@ -94,7 +96,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         <div className="prose prose-lg lg:prose-xl max-w-none text-ink/90">
           {post.content ? <RichText content={post.content} /> : (
-            <p className="font-serif italic text-ink/60">No content available.</p>
+            <p className="font-serif italic text-ink/60">{t('noContent')}</p>
           )}
         </div>
       </Container>

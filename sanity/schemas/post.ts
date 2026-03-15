@@ -8,7 +8,7 @@ export const post = defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'string',
+      type: 'localeString',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -16,7 +16,7 @@ export const post = defineType({
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'title.en',
         maxLength: 96,
       },
       validation: (Rule) => Rule.required(),
@@ -44,7 +44,7 @@ export const post = defineType({
     defineField({
       name: 'excerpt',
       title: 'Excerpt',
-      type: 'text',
+      type: 'localeText',
       description: 'A short summary of the post',
     }),
     defineField({
@@ -69,8 +69,12 @@ export const post = defineType({
       media: 'coverImage',
     },
     prepare(selection) {
-      const { author } = selection;
-      return { ...selection, subtitle: author && `by ${author}` };
+      const { title, author, media } = selection;
+      return {
+        title: title?.en || title?.de || 'Untitled',
+        subtitle: author && `by ${author}`,
+        media,
+      };
     },
   },
 });

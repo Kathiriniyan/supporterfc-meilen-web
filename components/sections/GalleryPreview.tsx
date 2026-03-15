@@ -6,8 +6,9 @@ import { sanityFetch } from '@/lib/sanity/fetch';
 import { GALLERY_QUERY } from '@/lib/sanity/queries';
 import { urlFor } from '@/lib/sanity/image';
 import { Button } from '../ui/Button';
+import { getLocalized } from '@/lib/utils/locale';
 
-export async function GalleryPreview() {
+export async function GalleryPreview({ locale }: { locale: string }) {
     const t = await getTranslations('Gallery');
     const collections = await sanityFetch<any[]>({ query: GALLERY_QUERY }).catch(() => []);
 
@@ -57,10 +58,10 @@ export async function GalleryPreview() {
                             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                             <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                                 <p className="font-sans text-[10px] font-black uppercase text-orange tracking-[0.2em] mb-1">
-                                    {img.collectionTitle}
+                                    {getLocalized(img.collectionTitle, locale)}
                                 </p>
                                 <p className="font-serif text-white italic text-sm line-clamp-1">
-                                    {img.caption}
+                                    {getLocalized(img.caption, locale)}
                                 </p>
                             </div>
                         </div>

@@ -158,5 +158,58 @@
         }
       }
     }
+  },
+  "NewsPage": {
+    "title": "Neuigkeiten",
+    "subtitle": "Wichtige Ankündigungen, Reiseinfos und schnelle Updates.",
+    "backToNews": "Zurück zu den News",
+    "notFound": "News-Eintrag nicht gefunden oder Mock-Daten werden angezeigt.",
+    "noDetails": "Keine zusätzlichen Details verfügbar."
+  },
+  "BlogPage": {
+    "title": "Geschichten",
+    "subtitle": "Spielberichte, Erbe-Einblicke und Ankündigungen der SupporterFC Meilen Gemeinschaft.",
+    "noImage": "Kein Bild",
+    "uncategorized": "Unkategorisiert",
+    "readArticle": "Artikel lesen",
+    "backToStories": "Zurück zu den Geschichten",
+    "notFound": "Beitrag nicht gefunden. Dies ist ein Design-Platzhalter.",
+    "noContent": "Kein Inhalt verfügbar.",
+    "author": "Autor"
+  },
+  "MerchPage": {
+    "overline": "Fanartikel",
+    "title": "Trage die Farben",
+    "subtitle": "Jeder Kauf finanziert direkt Stadion-Choreografien, Auswärtsfahrten und Gemeinschaftsinitiativen. Keine Profitmentalität."
+  },
+  "MerchDetail": {
+    "backToShop": "Alle Fanartikel ansehen",
+    "officialMerch": "Offizielles Merchandise",
+    "buyNow": "Jetzt im offiziellen Shop kaufen",
+    "noImage": "Kein Bild verfügbar",
+    "noDescription": "Keine Beschreibung für dieses Produkt verfügbar.",
+    "securePayment": "Transaktionen werden sicher über Spreadshirt abgewickelt",
+    "productNotFound": "Produkt nicht gefunden. Mock-Layout wird gerendert..."
+  },
+  "JoinPage": {
+    "overline": "Mitgliedschaft",
+    "title": "Werde ein",
+    "titleHighlight": "Supporter",
+    "subtitle": "Werde Teil der SupporterFC Meilen Familie. Als registriertes Mitglied finanzierst du direkt unsere Choreografien, Auswärtsbusse und den Kampf für authentischen Fussball.",
+    "standardTitle": "Standard Mitglied",
+    "standardDesc": "50 CHF / Jahr. Stimmrecht an der Generalversammlung und Priorität bei Auswärtstickets.",
+    "lifetimeTitle": "Lebenslange Mitgliedschaft",
+    "lifetimeDesc": "1000 CHF / Einmalig. Verewigt auf der Stadionplakette, exklusiver Legacy-Schal und lebenslanges Stimmrecht.",
+    "formTitle": "Anmeldeformular",
+    "nameLabel": "Vollständiger Name *",
+    "emailLabel": "E-Mail-Adresse *",
+    "phoneLabel": "Telefonnummer",
+    "levelLabel": "Mitgliedschaftsstufe *",
+    "standardOption": "Standard Mitglied (50 CHF/Jahr)",
+    "lifetimeOption": "Lebenslange Mitgliedschaft (1000 CHF)",
+    "submitButton": "Bewerbung einreichen",
+    "submitting": "Wird eingereicht...",
+    "success": "Bewerbung eingegangen. Wir kontaktieren Sie in Kürze mit Zahlungsdetails.",
+    "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
   }
 }
