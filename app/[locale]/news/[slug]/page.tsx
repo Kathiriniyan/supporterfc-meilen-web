@@ -37,7 +37,7 @@ export default async function NewsDetail({ params }: Props) {
   if (!post) {
     return (
       <div className="pt-32 pb-24 bg-cream min-h-screen">
-        <Container className="max-w-3xl">
+        <Container className="max-w-7xl">
           <Link href="/news" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
             <ArrowLeft size={16} /> {t('backToNews')}
           </Link>
@@ -52,7 +52,7 @@ export default async function NewsDetail({ params }: Props) {
   // Simplified UI compared to blog, no massive images. Strictly information delivery.
   return (
     <article className="pt-32 pb-24 bg-cream min-h-screen">
-      <Container className="max-w-3xl">
+      <Container className="max-w-7xl">
         <Link href="/news" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
           <ArrowLeft size={16} /> {t('backToNews')}
         </Link>
