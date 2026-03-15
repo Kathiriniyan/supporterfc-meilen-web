@@ -9,6 +9,7 @@ import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
 import { RichText } from '@/components/ui/RichText';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { getLocalized } from '@/lib/utils/locale';
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -51,7 +52,7 @@ export default async function ProductDetail({ params }: Props) {
                   <div key={idx} className="aspect-square md:aspect-[4/3] w-full bg-white border border-ink/20 mix-blend-multiply relative flex items-center justify-center p-8">
                     <Image
                       src={urlFor(img).url()}
-                      alt={`${product.name} view ${idx + 1}`}
+                      alt={`${getLocalized(product.name, resolvedParams.locale)} view ${idx + 1}`}
                       fill
                       className="object-contain p-8"
                     />
@@ -72,7 +73,7 @@ export default async function ProductDetail({ params }: Props) {
                 {t('officialMerch')}
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-sans font-black uppercase text-ink tracking-tight leading-[0.95] mb-6">
-                {product.name}
+                {getLocalized(product.name, resolvedParams.locale)}
               </h1>
               <p className="font-serif text-2xl lg:text-4xl italic text-ink/80 mb-12">
                 CHF {product.price.toFixed(2)}

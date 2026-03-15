@@ -7,6 +7,7 @@ import { BLOG_LIST_QUERY } from '@/lib/sanity/queries';
 import { urlFor } from '@/lib/sanity/image';
 import { Container } from '@/components/layout/Container';
 import { format } from 'date-fns';
+import { getLocalized } from '@/lib/utils/locale';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -50,7 +51,7 @@ export default async function BlogPage({ params }: Props) {
             <Link key={post._id} href={`/blog/${post.slug.current}`} className="group block bg-vintage border border-ink/20 hover:border-ink hover:shadow-[8px_8px_0_0_#F5A900] transition-all duration-300 pb-6 flex flex-col h-full">
               <div className="aspect-[4/3] w-full bg-ink/5 mb-6 overflow-hidden border-b border-ink/20 grayscale group-hover:grayscale-0 transition-all duration-500 relative">
                 {post.coverImage ? (
-                  <Image src={urlFor(post.coverImage).url()} alt={post.title} fill className="object-cover" />
+                  <Image src={urlFor(post.coverImage).url()} alt={getLocalized(post.title, locale)} fill className="object-cover" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center font-sans uppercase font-bold text-ink/20 text-sm tracking-widest">
                     {t('noImage')}
@@ -62,10 +63,10 @@ export default async function BlogPage({ params }: Props) {
                   {post.category?.title || t('uncategorized')} / {format(new Date(post.publishedAt), 'MMM dd, yyyy')}
                 </span>
                 <h2 className="font-sans text-2xl font-bold uppercase leading-tight mb-4 group-hover:text-gold transition-colors">
-                  {post.title}
+                  {getLocalized(post.title, locale)}
                 </h2>
                 <p className="font-serif text-ink/70 line-clamp-3 leading-relaxed mb-4 flex-1">
-                  {post.excerpt || 'Read the full story to learn more about this post...'}
+                  {getLocalized(post.excerpt, locale) || 'Read the full story to learn more about this post...'}
                 </p>
                 <div className="font-sans text-xs font-black uppercase tracking-widest text-ink mt-auto group-hover:underline underline-offset-4 decoration-2">
                   {t('readArticle')}

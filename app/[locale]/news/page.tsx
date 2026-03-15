@@ -6,6 +6,7 @@ import { NEWS_LIST_QUERY } from '@/lib/sanity/queries';
 import { Container } from '@/components/layout/Container';
 import { format } from 'date-fns';
 import { ArrowRight } from 'lucide-react';
+import { getLocalized } from '@/lib/utils/locale';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -57,7 +58,7 @@ export default async function NewsPage({ params }: Props) {
                   {format(new Date(post.publishedAt), 'MMM dd, yyyy')}
                 </time>
                 <h2 className="font-sans text-xl md:text-2xl font-bold uppercase leading-tight group-hover:text-gold transition-colors">
-                  {post.title}
+                  {getLocalized(post.title, locale)}
                 </h2>
               </div>
               <div className="hidden md:flex items-center text-ink/40 group-hover:text-ink transition-colors group-hover:translate-x-2 transform duration-300">

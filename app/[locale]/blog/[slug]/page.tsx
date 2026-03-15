@@ -10,6 +10,7 @@ import { Container } from '@/components/layout/Container';
 import { RichText } from '@/components/ui/RichText';
 import { format } from 'date-fns';
 import { ArrowLeft } from 'lucide-react';
+import { getLocalized } from '@/lib/utils/locale';
 
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
@@ -23,7 +24,7 @@ export async function generateMetadata({ params }: Props) {
   }).catch(() => null);
 
   if (!post) return { title: 'Post Not Found' };
-  return { title: `${post.title} - SupporterFC Meilen` };
+  return { title: `${getLocalized(post.title, resolvedParams.locale)} - SupporterFC Meilen` };
 }
 
 export default async function BlogPostPage({ params }: Props) {
@@ -62,7 +63,7 @@ export default async function BlogPostPage({ params }: Props) {
             {post.category?.title} / {format(new Date(post.publishedAt), 'MMMM dd, yyyy')}
           </span>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-black uppercase text-ink tracking-tighter leading-[0.9] mb-8">
-            {post.title}
+            {getLocalized(post.title, resolvedParams.locale)}
           </h1>
 
           {post.author && (
@@ -86,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="aspect-[21/9] w-full relative mb-16 border border-ink/20 bg-cream mix-blend-multiply flex items-center justify-center">
             <Image
               src={urlFor(post.coverImage).url()}
-              alt={post.title}
+              alt={getLocalized(post.title, resolvedParams.locale)}
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
               priority
