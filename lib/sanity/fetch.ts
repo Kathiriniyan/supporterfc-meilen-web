@@ -12,7 +12,7 @@ export async function sanityFetch<QueryResponse>({
   try {
     return await client.fetch<QueryResponse>(query, params, {
       next: {
-        revalidate: 3600, // ISR cache for 1 hour
+        revalidate: 0, // Disable caching so updates appear immediately
         tags,
       },
     });
