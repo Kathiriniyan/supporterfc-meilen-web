@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { sanityFetch } from '@/lib/sanity/fetch';
 import { BLOG_LIST_QUERY } from '@/lib/sanity/queries';
@@ -15,11 +15,11 @@ export const metadata = {
 export default async function BlogPage() {
   // In a real scenario, this fetches actual data. We'll simulate the array mapped to the schema.
   const rawPosts = await sanityFetch<any[]>({ query: BLOG_LIST_QUERY }).catch(() => []);
-  
-  // Fallback mock data if Sanity is empty
+
+  // Update mock data to use fixed dates to prevent hydration mismatch
   const posts = rawPosts.length > 0 ? rawPosts : [
-    { _id: '1', title: 'The Derby Atmosphere', slug: { current: 'derby' }, publishedAt: new Date().toISOString(), excerpt: 'An unforgettable night under the floodlights.', category: { title: 'Matchday' } },
-    { _id: '2', title: '50 Years of History', slug: { current: '50-years' }, publishedAt: new Date(Date.now() - 86400000).toISOString(), excerpt: 'Looking back at our humble beginnings in 1976.', category: { title: 'Heritage' } },
+    { _id: '1', title: 'The Derby Atmosphere', slug: { current: 'derby' }, publishedAt: '2026-03-15T12:00:00Z', excerpt: 'An unforgettable night under the floodlights.', category: { title: 'Matchday' } },
+    { _id: '2', title: '50 Years of History', slug: { current: '50-years' }, publishedAt: '2026-03-14T12:00:00Z', excerpt: 'Looking back at our humble beginnings in 1976.', category: { title: 'Heritage' } },
   ];
 
   return (

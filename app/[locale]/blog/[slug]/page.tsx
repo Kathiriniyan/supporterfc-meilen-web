@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { notFound } from 'next/navigation';
 import { sanityFetch } from '@/lib/sanity/fetch';
 import { BLOG_DETAIL_QUERY } from '@/lib/sanity/queries';
@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: Props) {
         <Link href="/blog" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
           <ArrowLeft size={16} /> Back to Stories
         </Link>
-        
+
         <header className="mb-16">
           <span className="font-sans text-sm font-bold uppercase text-orange tracking-widest block mb-4">
             {post.category?.title} / {format(new Date(post.publishedAt), 'MMMM dd, yyyy')}
@@ -62,7 +62,7 @@ export default async function BlogPostPage({ params }: Props) {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-black uppercase text-ink tracking-tighter leading-[0.9] mb-8">
             {post.title}
           </h1>
-          
+
           {post.author && (
             <div className="flex items-center gap-4 mt-8 border-t border-ink/20 pt-8">
               {post.author.image ? (
@@ -82,10 +82,10 @@ export default async function BlogPostPage({ params }: Props) {
 
         {post.coverImage && (
           <div className="aspect-[21/9] w-full relative mb-16 border border-ink/20 bg-cream mix-blend-multiply flex items-center justify-center">
-            <Image 
-              src={urlFor(post.coverImage).url()} 
-              alt={post.title} 
-              fill 
+            <Image
+              src={urlFor(post.coverImage).url()}
+              alt={post.title}
+              fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
               priority
             />
