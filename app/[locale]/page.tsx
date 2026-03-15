@@ -1,6 +1,8 @@
 import { HeroSection } from '@/components/sections/Hero';
 import { AnniversaryIntro } from '@/components/sections/Intro';
 import { TimelinePreview } from '@/components/sections/TimelinePreview';
+import { NewsPreview } from '@/components/sections/NewsPreview';
+import { GalleryPreview } from '@/components/sections/GalleryPreview';
 import { SupporterStoriesPreview } from '@/components/sections/Stories';
 import { MerchPreview } from '@/components/sections/Merch';
 
@@ -10,6 +12,8 @@ export default function HomePage() {
       <HeroSection />
       <AnniversaryIntro />
       <TimelinePreview />
+      <NewsPreview />
+      <GalleryPreview />
       <SupporterStoriesPreview />
       <MerchPreview />
     </>

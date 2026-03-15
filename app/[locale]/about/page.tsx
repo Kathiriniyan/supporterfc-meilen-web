@@ -26,7 +26,7 @@ export default function AboutPage() {
 
   return (
     <div ref={containerRef} className="pt-32 pb-24 bg-cream min-h-screen overflow-hidden">
-      <Container className="max-w-6xl">
+      <Container className="max-w-7xl">
         <header className="mb-24 border-b-2 border-ink/10 pb-16 text-center stagger-fade">
           <span className="font-sans text-sm font-black uppercase text-orange tracking-[0.3em] block mb-6">
             {t('overline')}

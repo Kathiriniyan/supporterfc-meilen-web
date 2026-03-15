@@ -31,11 +31,22 @@
   "Stories": {
     "title": "Supporter Geschichten",
     "subtitle": "Stimmen von den Rängen",
-    "readAll": "Alle News lesen",
+    "readAll": "Zeig mir alle Geschichten",
     "matchday": "Spieltag",
     "coverImage": "Titelbild",
     "derbyTitle": "Die Derby-Atmosphäre",
     "derbyDesc": "Die Emotionen kochten hoch, als die Mannschaften das Spielfeld betraten. Ein unvergesslicher Moment für jeden Fan."
+  },
+  "News": {
+    "title": "Letzte News",
+    "subtitle": "Offizielle Club-Bekanntmachungen",
+    "readMore": "Mehr erfahren",
+    "allNews": "Zeig mir alle News"
+  },
+  "Gallery": {
+    "title": "Die Archive",
+    "subtitle": "Visuelle Eindrücke aus 50 Jahren Leidenschaft",
+    "viewAll": "Galerie ansehen"
   },
   "Merch": {
     "overline": "Offizielles Merch",

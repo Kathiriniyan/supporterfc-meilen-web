@@ -24,7 +24,7 @@ export default async function NewsPage() {
 
   return (
     <div className="pt-32 pb-24 bg-cream min-h-screen">
-      <Container className="max-w-4xl">
+      <Container className="max-w-7xl">
         <header className="mb-16 border-b border-ink/20 pb-8">
           <h1 className="text-6xl md:text-8xl font-sans font-black uppercase text-ink tracking-tighter drop-shadow-sm">
             News

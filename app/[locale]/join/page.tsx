@@ -31,7 +31,7 @@ export default function JoinPage() {
 
   return (
     <div className="pt-32 pb-24 bg-cream min-h-screen">
-      <Container className="max-w-5xl">
+      <Container className="max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           {/* Left: Info */}

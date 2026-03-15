@@ -31,11 +31,22 @@
     "Stories": {
         "title": "Supporter Stories",
         "subtitle": "Voice from the terraces",
-        "readAll": "Read All News",
+        "readAll": "Show All Stories",
         "matchday": "Matchday",
         "coverImage": "Cover Image",
         "derbyTitle": "The Derby Atmosphere",
         "derbyDesc": "Emotions ran high as the teams took the pitch. An unforgettable moment for every fan."
+    },
+    "News": {
+        "title": "Latest News",
+        "subtitle": "Official club announcements",
+        "readMore": "Read More",
+        "allNews": "Show All News"
+    },
+    "Gallery": {
+        "title": "The Archives",
+        "subtitle": "Visual glimpses of 50 years of passion",
+        "viewAll": "View Gallery"
     },
     "Merch": {
         "overline": "Official Merch",

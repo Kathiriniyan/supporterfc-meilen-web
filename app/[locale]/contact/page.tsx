@@ -48,7 +48,7 @@ export default function ContactPage() {
 
   return (
     <div ref={pageRef} className="pt-32 pb-24 bg-cream min-h-screen">
-      <Container className="max-w-6xl">
+      <Container className="max-w-7xl">
         <header className="mb-20 stagger-fade">
           <span className="font-sans text-sm font-bold uppercase text-orange tracking-[0.3em] block mb-6">
             {t('overline')}
