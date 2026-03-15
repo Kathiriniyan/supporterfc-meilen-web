@@ -1,14 +1,16 @@
-'use client';
-
 import * as React from 'react';
 import { Link } from '@/i18n/navigation';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+import { sanityFetch } from '@/lib/sanity/fetch';
+import { PRODUCTS_QUERY } from '@/lib/sanity/queries';
 import { Container } from '../layout/Container';
 import { Button } from '../ui/Button';
+import { ProductCard } from '../ui/ProductCard';
 
-export function MerchPreview() {
-  const t = useTranslations('Merch');
-  const products = [1, 2, 3, 4]; // Mock
+export async function MerchPreview({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: 'Merch' });
+  const rawProducts = await sanityFetch<any[]>({ query: PRODUCTS_QUERY }).catch(() => []);
+  const products = rawProducts.length > 0 ? rawProducts.slice(0, 4) : [];
 
   return (
     <section className="py-24 border-b border-ink/20 bg-vintage">
@@ -27,20 +29,7 @@ export function MerchPreview() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {products.map((p) => (
-            <Link key={p} href={`/merchandise/product-${p}`} className="group block border border-ink/20 bg-cream p-4 hover:border-ink transition-colors">
-              <div className="aspect-square bg-white border border-ink/10 mb-4 mix-blend-multiply flex items-center justify-center font-sans font-bold text-ink/20 uppercase">
-                Product Shot
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-sans font-bold uppercase leading-tight group-hover:text-orange transition-colors">
-                    {t('productName')}
-                  </h3>
-                  <p className="font-serif text-ink/60 text-sm mt-1">{t('oneSize')}</p>
-                </div>
-                <span className="font-sans font-black">CHF 25</span>
-              </div>
-            </Link>
+            <ProductCard key={p._id} product={p} locale={locale} />
           ))}
         </div>
 

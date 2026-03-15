@@ -20,7 +20,7 @@ export default async function HomePage({ params }: Props) {
       <NewsPreview locale={locale} />
       <GalleryPreview locale={locale} />
       <SupporterStoriesPreview />
-      <MerchPreview />
+      <MerchPreview locale={locale} />
     </>
   );
 }
