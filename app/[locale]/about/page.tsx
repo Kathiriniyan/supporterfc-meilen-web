@@ -47,7 +47,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-32 items-center stagger-fade">
           <div className="aspect-[3/4] w-full bg-ink/10 border-2 border-ink relative grayscale hover:grayscale-0 transition-all duration-700 shadow-[12px_12px_0_0_#1A1A1A]">
             <div className="absolute inset-0 flex items-center justify-center font-sans font-black uppercase tracking-widest text-ink/5 text-sm">
-              Archive Photo 1975
+              Archive Photo 1976
             </div>
           </div>
           <div className="flex flex-col justify-center">

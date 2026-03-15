@@ -4,6 +4,7 @@ import * as React from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { Container } from './Container';
+import Image from 'next/image';
 import { Button } from '../ui/Button';
 import { LanguageSwitcher } from '../ui/LanguageSwitcher';
 import { Menu, X } from 'lucide-react';
@@ -58,8 +59,15 @@ export function Navbar() {
 
         {/* Center Logo */}
         <div className="flex-1 lg:flex-none flex justify-center lg:px-8 xl:px-12">
-          <Link href="/" className="text-xl md:text-2xl font-sans font-black uppercase tracking-tighter whitespace-nowrap">
-            SupporterFC<span className="text-gold">Meilen</span>
+          <Link href="/" className="block">
+            <Image
+              src="/logo.png"
+              alt="SupporterFC Meilen Logo"
+              width={180}
+              height={48}
+              className="h-10 md:h-12 w-auto object-contain"
+              priority
+            />
           </Link>
         </div>
 

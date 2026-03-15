@@ -10,12 +10,12 @@ import { SETTINGS_QUERY } from '@/lib/sanity/queries';
 import { urlFor } from '@/lib/sanity/image';
 import '../globals.css'; // Adjust path if globals is one level up
 
-const bricolage = Bricolage_Grotesque({ 
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
   variable: '--font-bricolage'
 });
 
-const cormorant = Cormorant_Garamond({ 
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
@@ -24,7 +24,7 @@ const cormorant = Cormorant_Garamond({
 
 export async function generateMetadata() {
   const settings = await sanityFetch<any>({ query: SETTINGS_QUERY }).catch(() => null);
-  
+
   const title = settings?.heroTitle || 'SupporterFC Meilen - 50th Anniversary';
   const description = 'Celebrating 50 years of SupporterFC Meilen history, community, and unconditional support.';
   const ogImage = settings?.heroImage ? urlFor(settings.heroImage).url() : '';

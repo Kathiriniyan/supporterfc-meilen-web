@@ -90,7 +90,7 @@ export function GalleryClient({ initialData }: { initialData: GalleryItem[] }) {
             Gallery
           </h1>
           <p className="font-serif text-xl md:text-2xl text-ink/70 italic leading-relaxed">
-            Historical un-cropped photography. From 1975 to today.
+            Historical un-cropped photography. From 1976 to today.
           </p>
         </header>
 

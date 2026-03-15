@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { Link } from '@/i18n/navigation';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Container } from './Container';
 import { Button } from '../ui/Button';
@@ -17,9 +18,15 @@ export function Footer() {
 
           {/* Brand Col */}
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-sans font-black uppercase tracking-tighter">
-              SupporterFC<span className="text-gold">Meilen</span>
-            </h2>
+            <Link href="/" className="block">
+              <Image
+                src="/logo.png"
+                alt="SupporterFC Meilen Logo"
+                width={200}
+                height={54}
+                className="h-12 w-auto object-contain"
+              />
+            </Link>
             <p className="font-serif text-ink/70">
               {tf('brandDesc')}
             </p>

@@ -15,7 +15,7 @@ export default async function MerchandisePage() {
   // Mock data in case DB is empty during setup
   const products = rawProducts.length > 0 ? rawProducts : [
     { _id: '1', name: 'Anniversary Heritage Scarf', slug: { current: 'heritage-scarf' }, price: 25.00 },
-    { _id: '2', name: 'Original 1975 Tee (Black)', slug: { current: '1975-tee-black' }, price: 35.00 },
+    { _id: '2', name: 'Original 1976 Tee (Black)', slug: { current: '1976-tee-black' }, price: 35.00 },
     { _id: '3', name: 'Matchday Flag 1.5x1m', slug: { current: 'match-flag' }, price: 40.00 },
     { _id: '4', name: 'Sticker Pack "Against Modern Football"', slug: { current: 'sticker-pack' }, price: 5.00 },
     { _id: '5', name: 'Retro Windbreaker', slug: { current: 'retro-windbreaker' }, price: 85.00 },

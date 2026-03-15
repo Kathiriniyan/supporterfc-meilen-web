@@ -6,7 +6,7 @@ import { Container } from '../layout/Container';
 
 export function TimelinePreview() {
   const t = useTranslations('Timeline');
-  const years = [1975, 1982, 1999, 2010, 2025]; // Mock data
+  const years = [1976, 1982, 1999, 2010, 2026]; // Mock data
 
   return (
     <section className="py-24 border-b border-ink/20 overflow-hidden bg-vintage">

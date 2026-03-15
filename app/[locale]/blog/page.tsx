@@ -19,7 +19,7 @@ export default async function BlogPage() {
   // Fallback mock data if Sanity is empty
   const posts = rawPosts.length > 0 ? rawPosts : [
     { _id: '1', title: 'The Derby Atmosphere', slug: { current: 'derby' }, publishedAt: new Date().toISOString(), excerpt: 'An unforgettable night under the floodlights.', category: { title: 'Matchday' } },
-    { _id: '2', title: '50 Years of History', slug: { current: '50-years' }, publishedAt: new Date(Date.now() - 86400000).toISOString(), excerpt: 'Looking back at our humble beginnings in 1975.', category: { title: 'Heritage' } },
+    { _id: '2', title: '50 Years of History', slug: { current: '50-years' }, publishedAt: new Date(Date.now() - 86400000).toISOString(), excerpt: 'Looking back at our humble beginnings in 1976.', category: { title: 'Heritage' } },
   ];
 
   return (
