@@ -128,33 +128,37 @@
         "president": {
             "overline": "Leadership",
             "title": "Our President",
-            "name": "Hans Muster",
-            "bio": "Member since 1985 and at the forefront since 2010. Hans embodies the values of Meilen like no other.",
-            "contact": "president@supporterfc-meilen.ch"
+            "name": "Dr. Sanji Lingam MBA",
+            "bio": "Youth development is an investment in the future of our club.Together with our members and partners, we create sustainable prospects for FC Meilen.",
+            "contact": "sanji@lingamdynasty.ch"
         },
         "team": {
             "title": "The Team",
             "subtitle": "The people behind the passion.",
             "members": {
                 "m1": {
-                    "name": "Sarah Keller",
-                    "role": "Vice-President",
-                    "code": "SK-75"
+                    "name": "Slavica Jovanovic",
+                    "role": "Treasurer",
+                    "code": "SJ-01",
+                    "bio": "Slavica Jovanovic is responsible for the financial management of the Supporters' Association. With precision and transparency, she ensures that all funds are used purposefully and responsibly for the junior teams."
                 },
                 "m2": {
-                    "name": "Marco Rossi",
-                    "role": "Finance",
-                    "code": "MR-82"
+                    "name": "Hanspeter Huber",
+                    "role": "Board Member",
+                    "code": "HH-02",
+                    "bio": "Hanspeter Huber brings years of experience and club loyalty to the board. He supports strategic projects and contributes to strengthening the community around FC Meilen."
                 },
                 "m3": {
-                    "name": "Luca Weber",
-                    "role": "Choreo Lead",
-                    "code": "LW-99"
+                    "name": "Wolfgang Hafner",
+                    "role": "Board Member",
+                    "code": "WH-03",
+                    "bio": "Wolfgang Hafner is particularly involved in organizational and event-related topics. His commitment contributes significantly to the successful implementation of club events and anniversary projects."
                 },
                 "m4": {
-                    "name": "Elena Fischer",
-                    "role": "Events",
-                    "code": "EF-05"
+                    "name": "Danijela Frei",
+                    "role": "Board Member",
+                    "code": "DF-04",
+                    "bio": "Danijela Frei supports the board in administrative and communicative matters. With her dedication, she strengthens the internal organization and the external presence of the Supporters' Association."
                 }
             }
         }

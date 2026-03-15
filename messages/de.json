@@ -128,33 +128,37 @@
     "president": {
       "overline": "Führung",
       "title": "Unser Präsident",
-      "name": "Hans Muster",
-      "bio": "Seit 1985 Mitglied und seit 2010 an der Spitze. Hans verkörpert die Werte von Meilen wie kein anderer.",
-      "contact": "Präsident@supporterfc-meilen.ch"
+      "name": "Dr. Sanji Lingam MBA",
+      "bio": "Die Nachwuchsförderung ist die Investition in die Zukunft unseres Vereins. Gemeinsam mit unseren Mitgliedern und Partnern schaffen wir nachhaltige Perspektiven für den FC Meilen",
+      "contact": "sanji@lingamdynasty.ch"
     },
     "team": {
       "title": "Das Team",
       "subtitle": "Die Menschen hinter der Leidenschaft.",
       "members": {
         "m1": {
-          "name": "Sarah Keller",
-          "role": "Vize-Präsidentin",
-          "code": "SK-75"
+          "name": "Slavica Jovanovic",
+          "role": "Kassiererin",
+          "code": "SJ-01",
+          "bio": "Slavica Jovanovic verantwortet die finanzielle Führung der Supporter-Vereinigung. Mit Präzision und Transparenz stellt sie sicher, dass alle Mittel gezielt und verantwortungsvoll für die Juniorinnen und Junioren eingesetzt werden."
         },
         "m2": {
-          "name": "Marco Rossi",
-          "role": "Finanzen",
-          "code": "MR-82"
+          "name": "Hanspeter Huber",
+          "role": "Vorstandsmitglied",
+          "code": "HH-02",
+          "bio": "Hanspeter Huber bringt langjährige Erfahrung und Vereinsverbundenheit in die Vorstandsarbeit ein. Er unterstützt strategische Projekte und trägt zur Stärkung der Gemeinschaft rund um den FC Meilen bei."
         },
         "m3": {
-          "name": "Luca Weber",
-          "role": "Choreo-Leiter",
-          "code": "LW-99"
+          "name": "Wolfgang Hafner",
+          "role": "Vorstandsmitglied",
+          "code": "WH-03",
+          "bio": "Wolfgang Hafner engagiert sich insbesondere in organisatorischen und eventbezogenen Themen. Sein Einsatz trägt wesentlich zur erfolgreichen Umsetzung von Vereinsanlässen und Jubiläumsprojekten bei."
         },
         "m4": {
-          "name": "Elena Fischer",
-          "role": "Events",
-          "code": "EF-05"
+          "name": "Danijela Frei",
+          "role": "Vorstandsmitglied",
+          "code": "DF-04",
+          "bio": "Danijela Frei unterstützt den Vorstand in administrativen und kommunikativen Belangen. Mit ihrem Engagement stärkt sie die interne Organisation sowie die Präsenz der Supporter-Vereinigung nach aussen."
         }
       }
     }

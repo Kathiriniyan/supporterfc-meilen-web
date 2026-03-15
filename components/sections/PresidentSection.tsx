@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Container } from '../layout/Container';
 
 export function PresidentSection() {
@@ -35,12 +36,14 @@ export function PresidentSection() {
                     </div>
                     <div className="order-1 md:order-2">
                         <div className="aspect-[4/5] bg-ink/10 border-4 border-ink relative grayscale hover:grayscale-0 transition-all duration-1000 group overflow-hidden">
-                            {/* Placeholder for President Image */}
-                            <div className="absolute inset-0 flex items-center justify-center font-sans font-black uppercase text-ink/10 text-4xl -rotate-12 group-hover:scale-110 transition-transform duration-700">
-                                Prez 1976
-                            </div>
+                            <Image
+                                src="/President.png"
+                                alt={t('name')}
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
                             <div className="absolute bottom-0 left-0 right-0 bg-gold text-ink p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 font-sans font-black uppercase text-center">
-                                Hans Muster - Est. 1985
+                                {t('name')} - Est. 2024
                             </div>
                         </div>
                     </div>
