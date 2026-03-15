@@ -13,16 +13,12 @@ export const deskStructure: StructureResolver = (S) =>
         ),
       S.divider(),
       S.listItem()
-        .title('Blog / News')
-        .child(
-          S.list()
-            .title('Blog / News')
-            .items([
-              S.documentTypeListItem('post').title('Posts'),
-              S.documentTypeListItem('category').title('Categories'),
-              S.documentTypeListItem('author').title('Authors'),
-            ])
-        ),
+        .title('News Updates')
+        .child(S.documentTypeList('news').title('News Updates')),
+      S.listItem()
+        .title('Blog Posts')
+        .child(S.documentTypeList('post').title('Blog Posts')),
+      S.divider(),
       S.listItem()
         .title('Heritage')
         .child(
@@ -41,6 +37,17 @@ export const deskStructure: StructureResolver = (S) =>
             .items([
               S.documentTypeListItem('product').title('Products'),
               S.documentTypeListItem('productCategory').title('Categories'),
+            ])
+        ),
+      S.divider(),
+      S.listItem()
+        .title('Taxonomies')
+        .child(
+          S.list()
+            .title('Taxonomies')
+            .items([
+              S.documentTypeListItem('category').title('Categories'),
+              S.documentTypeListItem('author').title('Authors'),
             ])
         ),
     ]);

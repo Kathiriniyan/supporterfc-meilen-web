@@ -10,7 +10,7 @@ export default function JoinPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('loading');
-    
+
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
@@ -33,7 +33,7 @@ export default function JoinPage() {
     <div className="pt-32 pb-24 bg-cream min-h-screen">
       <Container className="max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
+
           {/* Left: Info */}
           <div>
             <span className="font-sans text-xs font-bold uppercase text-orange tracking-widest block mb-6">
@@ -61,7 +61,7 @@ export default function JoinPage() {
           {/* Right: Form */}
           <div className="bg-vintage border border-ink p-8 md:p-12 relative shadow-[8px_8px_0_0_#0B0C10]">
             <h2 className="text-3xl font-sans font-black uppercase tracking-tight mb-8">Registration Form</h2>
-            
+
             {status === 'success' ? (
               <div className="bg-green-100 border border-green-800 text-green-900 p-6 font-sans font-bold text-center uppercase">
                 Application Received. We will contact you shortly with payment details.
@@ -92,7 +92,7 @@ export default function JoinPage() {
                     {status === 'loading' ? 'Submitting...' : 'Submit Application'}
                   </Button>
                 </div>
-                
+
                 {status === 'error' && (
                   <p className="text-red-600 font-sans text-sm font-bold text-center mt-2 uppercase">Something went wrong. Please try again.</p>
                 )}

@@ -3,13 +3,13 @@ import { Link } from '@/i18n/navigation';
 import { Container } from '../layout/Container';
 import { Button } from '../ui/Button';
 import { sanityFetch } from '@/lib/sanity/fetch';
-import { BLOG_LIST_QUERY } from '@/lib/sanity/queries';
+import { NEWS_LIST_QUERY } from '@/lib/sanity/queries';
 import { format } from 'date-fns';
 import { ArrowRight } from 'lucide-react';
 
 export async function NewsPreview() {
     const t = await getTranslations('News');
-    const rawPosts = await sanityFetch<any[]>({ query: BLOG_LIST_QUERY }).catch(() => []);
+    const rawPosts = await sanityFetch<any[]>({ query: NEWS_LIST_QUERY }).catch(() => []);
 
     // Take the latest 3 posts
     const posts = rawPosts.length > 0 ? rawPosts.slice(0, 3) : [

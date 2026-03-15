@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { sanityFetch } from '@/lib/sanity/fetch';
-import { BLOG_DETAIL_QUERY } from '@/lib/sanity/queries';
+import { NEWS_DETAIL_QUERY } from '@/lib/sanity/queries';
 import { Container } from '@/components/layout/Container';
 import { RichText } from '@/components/ui/RichText';
 import { format } from 'date-fns';
@@ -14,7 +14,7 @@ interface Props {
 export async function generateMetadata({ params }: Props) {
   const resolvedParams = await params;
   const post: any = await sanityFetch({
-    query: BLOG_DETAIL_QUERY,
+    query: NEWS_DETAIL_QUERY,
     params: { slug: resolvedParams.slug },
   }).catch(() => null);
 
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function NewsDetail({ params }: Props) {
   const resolvedParams = await params;
   const post: any = await sanityFetch({
-    query: BLOG_DETAIL_QUERY,
+    query: NEWS_DETAIL_QUERY,
     params: { slug: resolvedParams.slug },
   }).catch(() => null);
 
@@ -51,7 +51,7 @@ export default async function NewsDetail({ params }: Props) {
         <Link href="/news" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
           <ArrowLeft size={16} /> Back to News
         </Link>
-        
+
         <header className="mb-12 border-b border-ink/20 pb-8">
           <time className="font-sans text-sm font-bold uppercase text-orange tracking-widest block mb-4">
             {format(new Date(post.publishedAt), 'MMMM dd, yyyy - HH:mm')}

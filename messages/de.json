@@ -44,9 +44,14 @@
     "allNews": "Zeig mir alle News"
   },
   "Gallery": {
-    "title": "Die Archive",
-    "subtitle": "Visuelle Eindrücke aus 50 Jahren Leidenschaft",
-    "viewAll": "Galerie ansehen"
+    "title": "Galerie",
+    "subtitle": "Historische, ungeschnittene Fotografie. Von 1976 bis heute.",
+    "overline": "Die Archive",
+    "viewAll": "Galerie ansehen",
+    "mockPhoto": "Mock Foto",
+    "backToGallery": "Zurück zur Galerie",
+    "expandedView": "Erweiterte Ansicht",
+    "archivalDocument": "Archivdokument"
   },
   "Merch": {
     "overline": "Offizielles Merch",

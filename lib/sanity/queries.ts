@@ -22,6 +22,28 @@ export const BLOG_DETAIL_QUERY = groq`*[_type == "post" && slug.current == $slug
   category->{title}
 }`;
 
+export const NEWS_LIST_QUERY = groq`*[_type == "news"] | order(publishedAt desc) {
+  _id,
+  title,
+  slug,
+  excerpt,
+  coverImage,
+  publishedAt,
+  category->{title}
+}`;
+
+export const NEWS_DETAIL_QUERY = groq`*[_type == "news" && slug.current == $slug][0] {
+  _id,
+  title,
+  slug,
+  excerpt,
+  coverImage,
+  publishedAt,
+  content,
+  author->{name, image, bio},
+  category->{title}
+}`;
+
 export const PRODUCTS_QUERY = groq`*[_type == "product"] | order(price desc) {
   _id,
   name,

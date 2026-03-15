@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { sanityFetch } from '@/lib/sanity/fetch';
-import { BLOG_LIST_QUERY } from '@/lib/sanity/queries';
+import { NEWS_LIST_QUERY } from '@/lib/sanity/queries';
 import { Container } from '@/components/layout/Container';
 import { format } from 'date-fns';
 import { ArrowRight } from 'lucide-react';
@@ -12,8 +12,8 @@ export const metadata = {
 };
 
 export default async function NewsPage() {
-  const rawPosts = await sanityFetch<any[]>({ query: BLOG_LIST_QUERY }).catch(() => []);
-  
+  const rawPosts = await sanityFetch<any[]>({ query: NEWS_LIST_QUERY }).catch(() => []);
+
   // Filter for news (in a real app, query by a specific 'News' category slug)
   const posts = rawPosts.length > 0 ? rawPosts : [
     { _id: '1', title: 'Away Bus to Winterthur Fully Booked', slug: { current: 'bus-winterthur' }, publishedAt: new Date().toISOString() },
@@ -36,9 +36,9 @@ export default async function NewsPage() {
 
         <div className="flex flex-col border-t border-ink/20">
           {posts.map((post) => (
-            <Link 
-              key={post._id} 
-              href={`/news/${post.slug.current}`} 
+            <Link
+              key={post._id}
+              href={`/news/${post.slug.current}`}
               className="group flex flex-col md:flex-row md:items-center justify-between py-6 border-b border-ink/20 hover:bg-ink/5 transition-colors px-4 -mx-4"
             >
               <div className="flex flex-col md:flex-row md:items-baseline md:gap-8">

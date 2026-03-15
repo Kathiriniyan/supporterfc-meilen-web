@@ -44,9 +44,14 @@
         "allNews": "Show All News"
     },
     "Gallery": {
-        "title": "The Archives",
-        "subtitle": "Visual glimpses of 50 years of passion",
-        "viewAll": "View Gallery"
+        "title": "Gallery",
+        "subtitle": "Historical un-cropped photography. From 1976 to today.",
+        "overline": "The Archives",
+        "viewAll": "View Gallery",
+        "mockPhoto": "Mock Photo",
+        "backToGallery": "Back to Gallery",
+        "expandedView": "Expanded view",
+        "archivalDocument": "Archival Document"
     },
     "Merch": {
         "overline": "Official Merch",

@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import { sanityFetch } from '@/lib/sanity/fetch';
 import { groq } from 'next-sanity';
 
-const RSS_QUERY = groq`*[_type == "post"] | order(publishedAt desc)[0...15] { 
+const RSS_QUERY = groq`*[_type in ["post", "news"]] | order(publishedAt desc)[0...20] { 
+  _type,
   title, 
   slug, 
   excerpt, 
@@ -17,11 +18,13 @@ export async function GET() {
 
     const rssItems = posts
       .map((post: any) => {
+        const path = post._type === 'news' ? '/en/news/' : '/en/blog/';
+        const link = `${baseUrl}${path}${post.slug?.current}`;
         return `
         <item>
           <title><![CDATA[${post.title}]]></title>
-          <link>${baseUrl}/en/blog/${post.slug?.current}</link>
-          <guid isPermaLink="true">${baseUrl}/en/blog/${post.slug?.current}</guid>
+          <link>${link}</link>
+          <guid isPermaLink="true">${link}</guid>
           <pubDate>${new Date(post.publishedAt || Date.now()).toUTCString()}</pubDate>
           <description><![CDATA[${post.excerpt || ''}]]></description>
         </item>`;

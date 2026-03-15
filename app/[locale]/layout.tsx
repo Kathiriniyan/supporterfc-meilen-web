@@ -23,7 +23,12 @@ const cormorant = Cormorant_Garamond({
 });
 
 export async function generateMetadata() {
-  const settings = await sanityFetch<any>({ query: SETTINGS_QUERY }).catch(() => null);
+  let settings: any = null;
+  try {
+    settings = await sanityFetch<any>({ query: SETTINGS_QUERY });
+  } catch (error) {
+    console.error('Failed to fetch site settings for metadata:', error);
+  }
 
   const title = settings?.heroTitle || 'SupporterFC Meilen - 50th Anniversary';
   const description = 'Celebrating 50 years of SupporterFC Meilen history, community, and unconditional support.';
