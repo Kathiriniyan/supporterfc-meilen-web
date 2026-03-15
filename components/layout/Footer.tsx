@@ -48,9 +48,9 @@ export function Footer() {
             <h3 className="font-sans font-bold uppercase text-lg">{t('contact')}</h3>
             <address className="not-italic font-serif text-ink/70 flex flex-col gap-1">
               <span>SupporterFC Meilen</span>
-              <span>Postfach 123</span>
-              <span>8706 Meilen</span>
-              <a href="mailto:info@supporterfc-meilen.ch" className="mt-2 text-ink hover:text-orange transition-colors">info@supporterfc-meilen.ch</a>
+              <span>Sportzentrum Allmend</span>
+              <span>Burgstrasse 160, 8706 Meilen,</span>
+              <a href="mailto:supporter@fcmeilen.ch" className="mt-2 text-ink hover:text-orange transition-colors">supporter@fcmeilen.ch</a>
             </address>
           </div>
 

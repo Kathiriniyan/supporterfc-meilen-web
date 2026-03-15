@@ -152,12 +152,12 @@ export default function ContactPage() {
                 {t('addressTitle')}
               </p>
               <p className="text-ink font-black uppercase font-sans">SupporterFC Meilen</p>
-              <p>Postfach 123</p>
-              <p>8706 Meilen, Zurich</p>
+              <p>Sportzentrum Allmend</p>
+              <p>Burgstrasse 160, 8706 Meilen,</p>
               <p>Switzerland</p>
               <p className="pt-6">
-                <a href="mailto:info@supporterfc-meilen.ch" className="text-ink font-sans font-black uppercase text-sm hover:text-orange transition-all border-b-4 border-gold hover:border-orange pb-1">
-                  info@supporterfc-meilen.ch
+                <a href="mailto:supporter@fcmeilen.ch" className="text-ink font-sans font-black uppercase text-sm hover:text-orange transition-all border-b-4 border-gold hover:border-orange pb-1">
+                  supporter@fcmeilen.ch
                 </a>
               </p>
             </address>
