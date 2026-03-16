@@ -38,6 +38,7 @@ export function Navbar() {
   const links = [
     { href: `/about`, label: t('about') },
     { href: `/history`, label: t('history') },
+    { href: `/blog`, label: t('blog') || 'Blog' },
     { href: `/news`, label: t('news') },
     { href: `/gallery`, label: t('gallery') },
     { href: `/merchandise`, label: t('merch') },
@@ -45,8 +46,9 @@ export function Navbar() {
   ];
 
   return (
-    <header ref={navRef} className="fixed top-0 left-0 right-0 z-40 transition-colors duration-300 border-b border-ink/10">
-      <Container className="flex items-center justify-between h-20">
+    <>
+      <header ref={navRef} className="fixed top-0 left-0 right-0 z-40 transition-colors duration-300 border-b border-ink/10">
+        <Container className="flex items-center justify-between h-20">
 
         {/* Left Links (Desktop) */}
         <nav className="hidden lg:flex items-center gap-4 xl:gap-8 flex-1">
@@ -92,7 +94,8 @@ export function Navbar() {
           <Menu size={28} />
         </button>
 
-      </Container>
+        </Container>
+      </header>
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
@@ -115,6 +118,6 @@ export function Navbar() {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }

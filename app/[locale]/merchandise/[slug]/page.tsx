@@ -6,7 +6,7 @@ import { sanityFetch } from '@/lib/sanity/fetch';
 import { PRODUCT_DETAIL_QUERY } from '@/lib/sanity/queries';
 import { urlFor } from '@/lib/sanity/image';
 import { Container } from '@/components/layout/Container';
-import { Button } from '@/components/ui/Button';
+import { OrderForm } from '@/components/ui/OrderForm';
 import { RichText } from '@/components/ui/RichText';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { getLocalized } from '@/lib/utils/locale';
@@ -85,16 +85,12 @@ export default async function ProductDetail({ params }: Props) {
                 )}
               </div>
 
-              <Button
-                asChild
-                variant="brutalist"
-                size="lg"
-                className="w-full text-lg h-16 shadow-[8px_8px_0_0_#0B0C10] group"
-              >
-                <a href={product.affiliateLink || '#'} target="_blank" rel="noopener noreferrer">
-                  {t('buyNow')} <ExternalLink className="ml-3 inline-block transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" size={20} />
-                </a>
-              </Button>
+              <div className="mt-8">
+                <OrderForm
+                  productName={getLocalized(product.name, resolvedParams.locale)}
+                  productPrice={product.price}
+                />
+              </div>
 
               <p className="font-sans text-xs font-bold uppercase text-ink/40 text-center mt-6 tracking-widest">
                 {t('securePayment')}
