@@ -36,7 +36,7 @@ export function TeamSection() {
                                     src={m.image}
                                     alt={t(`members.${m.id}.name`)}
                                     fill
-                                    className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out group-hover:scale-105"
+                                    className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out group-hover:scale-105"
                                 />
                                 <div className="absolute top-4 left-4 font-sans font-black text-white/50 bg-ink/80 px-2 py-1 text-xs uppercase tracking-widest backdrop-blur-sm shadow-[2px_2px_0_0_rgba(255,255,255,0.2)]">
                                     {t(`members.${m.id}.code`)}

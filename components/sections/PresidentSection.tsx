@@ -40,7 +40,7 @@ export function PresidentSection() {
                                 src="/President-1.webp"
                                 alt={t('name')}
                                 fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                             />
                             <div className="absolute bottom-0 left-0 right-0 bg-gold text-ink p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 font-sans font-black uppercase text-center">
                                 {t('name')} - Est. 2024
