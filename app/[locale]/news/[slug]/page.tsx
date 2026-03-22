@@ -67,12 +67,13 @@ export default async function NewsDetail({ params }: Props) {
         </header>
 
         {post.coverImage && (
-          <div className="aspect-[21/9] w-full relative mb-12 border border-ink/20 bg-cream mix-blend-multiply flex items-center justify-center">
+          <div className="w-full relative mb-12 border border-ink/20 bg-cream mix-blend-multiply flex items-center justify-center overflow-hidden">
             <Image
               src={urlFor(post.coverImage).url()}
               alt={getLocalized(post.title, resolvedParams.locale)}
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              width={1600}
+              height={900}
+              className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
               priority
             />
           </div>
