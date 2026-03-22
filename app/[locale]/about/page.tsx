@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Container } from '@/components/layout/Container';
 import { PresidentSection } from '@/components/sections/PresidentSection';
 import { TeamSection } from '@/components/sections/TeamSection';
+import Image from 'next/image';
 import gsap from 'gsap';
 
 export default function AboutPage() {
@@ -46,9 +47,12 @@ export default function AboutPage() {
         {/* Section 1: History */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-32 items-center stagger-fade">
           <div className="aspect-[3/4] w-full bg-ink/10 border-2 border-ink relative grayscale hover:grayscale-0 transition-all duration-700 shadow-[12px_12px_0_0_#1A1A1A]">
-            <div className="absolute inset-0 flex items-center justify-center font-sans font-black uppercase tracking-widest text-ink/5 text-sm">
-              Archive Photo 1976
-            </div>
+            <Image
+              src="/about/about-1.webp"
+              alt="Archive Photo 1976"
+              fill
+              className="object-cover"
+            />
           </div>
           <div className="flex flex-col justify-center">
             <h2 className="text-4xl lg:text-6xl font-sans font-black uppercase text-ink tracking-tight mb-8 leading-[0.9]">
@@ -73,9 +77,12 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="aspect-[4/3] w-full bg-ink border-2 border-ink relative grayscale hover:grayscale-0 transition-all duration-700 order-1 md:order-2 shadow-[-12px_12px_0_0_#D4AF37]">
-            <div className="absolute inset-0 flex items-center justify-center font-sans font-black uppercase tracking-widest text-cream/10 text-sm">
-              Community Action
-            </div>
+            <Image
+              src="/about/about-2.webp"
+              alt="Community Action"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
 
