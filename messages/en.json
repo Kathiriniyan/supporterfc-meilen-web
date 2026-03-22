@@ -101,9 +101,7 @@
         "error": "Something went wrong. Please try again.",
         "subjects": {
             "general": "General Inquiry",
-            "away_tickets": "Away Tickets",
-            "choreo": "Choreography Contribution",
-            "press": "Press & Media"
+            "other": "Other (please specify)..."
         },
         "addressTitle": "Official Address",
         "mapTitle": "Meilen Stadium",

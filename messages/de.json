@@ -101,9 +101,7 @@
     "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",
     "subjects": {
       "general": "Allgemeine Anfrage",
-      "away_tickets": "Auswärtstickets",
-      "choreo": "Choreografie-Beitrag",
-      "press": "Presse & Medien"
+      "other": "Anderes (Bitte angeben)..."
     },
     "addressTitle": "Offizielle Adresse",
     "mapTitle": "Meilen Stadion",

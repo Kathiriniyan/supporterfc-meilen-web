@@ -9,6 +9,7 @@ import gsap from 'gsap';
 export default function ContactPage() {
   const t = useTranslations('Contact');
   const [status, setStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [subject, setSubject] = React.useState('general');
   const pageRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -104,16 +105,31 @@ export default function ContactPage() {
                   </label>
                   <select
                     required
-                    id="subject"
-                    name="subject"
+                    id="subject-select"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
                     className="w-full bg-cream border-2 border-ink/10 px-4 py-4 font-sans focus:outline-none focus:border-gold transition-colors appearance-none rounded-none text-lg"
                   >
                     <option value="general">{t('subjects.general')}</option>
-                    <option value="away_tickets">{t('subjects.away_tickets')}</option>
-                    <option value="choreo">{t('subjects.choreo')}</option>
-                    <option value="press">{t('subjects.press')}</option>
+                    <option value="other">{t('subjects.other')}</option>
                   </select>
                 </div>
+                {subject === 'other' && (
+                  <div className="stagger-fade">
+                    <label htmlFor="custom-subject" className="block font-sans text-xs font-black uppercase mb-2 text-ink/60">
+                      {t('subjectLabel')}
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      id="custom-subject"
+                      name="subject"
+                      placeholder={t('subjects.other')}
+                      className="w-full bg-cream border-2 border-ink px-4 py-4 font-sans focus:outline-none focus:border-gold transition-colors text-lg"
+                    />
+                  </div>
+                )}
+                <input type="hidden" name="subject" value={subject === 'other' ? '' : subject} disabled={subject === 'other'} />
                 <div>
                   <label htmlFor="message" className="block font-sans text-xs font-black uppercase mb-2 text-ink/60">
                     {t('messageLabel')}
@@ -162,17 +178,19 @@ export default function ContactPage() {
               </p>
             </address>
 
-            {/* Stark Map Block */}
-            <div className="w-full aspect-video bg-ink/10 border-2 border-ink relative grayscale hover:grayscale-0 transition-all duration-700 flex items-center justify-center p-8 text-center group">
-              <div className="z-10 bg-vintage p-8 border-2 border-ink shadow-[8px_8px_0_0_#1A1A1A] group-hover:scale-105 transition-transform duration-500">
-                <p className="font-sans font-black uppercase text-ink tracking-[0.2em] mb-2 text-sm italic">
-                  {t('mapTitle')}
-                </p>
-                <p className="font-serif italic text-ink/60 text-lg">
-                  {t('mapSubtitle')}
-                </p>
-              </div>
-              <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=Meilen,Zurich&zoom=14&size=800x600&maptype=roadmap&style=element:geometry%7Ccolor:0xf5f5f5&style=element:labels.icon%7Cvisibility:off&style=element:labels.text.fill%7Ccolor:0x616161&style=element:labels.text.stroke%7Ccolor:0xf5f5f5&style=feature:administrative.land_parcel%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&style=feature:poi%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:poi.park%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:road%7Celement:geometry%7Ccolor:0xffffff&style=feature:road.arterial%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:road.highway%7Celement:geometry%7Ccolor:0xdadada&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:transit.line%7Celement:geometry%7Ccolor:0xe5e5e5&style=feature:transit.station%7Celement:geometry%7Ccolor:0xeeeeee&style=feature:water%7Celement:geometry%7Ccolor:0xc9c9c9&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&sensor=false')] opacity-30 mix-blend-multiply bg-cover bg-center" />
+            {/* Stadium Map Embed */}
+            <div className="w-full aspect-video border-2 border-ink shadow-[12px_12px_0_0_#D4AF37] relative overflow-hidden bg-ink/5 stagger-fade">
+              <iframe
+                src="https://www.google.com/maps/d/embed?mid=1gc_f12m0l_DYzd89caIREN_cMJE&femb=1&ll=47.27228291027119%2C8.65106599076829&z=16"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="grayscale contrast-125"
+                title="Meilen Stadium Map"
+              ></iframe>
             </div>
 
           </div>
