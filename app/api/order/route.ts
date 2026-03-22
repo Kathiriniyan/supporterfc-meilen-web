@@ -44,10 +44,10 @@ export async function POST(req: Request) {
         const userMailOptions = {
             from: process.env.EMAIL_USER || 'noreply@supporterfc-meilen.ch',
             to: email,
-            subject: `Order Confirmation: ${productName} - SupporterFC Meilen`,
-            text: `Hello ${name},\n\nThank you for your order request for ${productName} (Size: ${size}).\n\nWe will review your request and contact you shortly with payment details.\n\nShipping Address:\n${address}\n\nBest regards,\nSupporterFC Meilen`,
+            subject: `Order Confirmation: ${productName} - Supporter FC Meilen`,
+            text: `Hello ${name},\n\nThank you for your order request for ${productName} (Size: ${size}).\n\nWe will review your request and contact you shortly with payment details.\n\nShipping Address:\n${address}\n\nBest regards,\nSupporter FC Meilen`,
             html: `
-        <h2 style="color: #FF5A00; text-transform: uppercase;">SupporterFC Meilen</h2>
+        <h2 style="color: #FF5A00; text-transform: uppercase;">Supporter FC Meilen</h2>
         <h3>Order Confirmation Request</h3>
         <p>Hello <strong>${name}</strong>,</p>
         <p>Thank you for supporting the club! We have received your order request.</p>

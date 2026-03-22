@@ -37,7 +37,7 @@ export function PresidentSection() {
                     <div className="order-1 md:order-2">
                         <div className="aspect-[4/5] bg-ink/10 border-4 border-ink relative grayscale hover:grayscale-0 transition-all duration-1000 group overflow-hidden">
                             <Image
-                                src="/President.png"
+                                src="/President-1.webp"
                                 alt={t('name')}
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-700"

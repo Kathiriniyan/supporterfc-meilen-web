@@ -11,14 +11,14 @@
     "contact": "Kontakt"
   },
   "Hero": {
-    "title": "50 Jahre SupporterFC Meilen",
+    "title": "50 Jahre Supporter FC Meilen",
     "subtitle": "Eine Gemeinschaft von Leidenschaft und Tradition seit 1976."
   },
   "Intro": {
     "year": "1976",
     "overline": "UNSERE GESCHICHTE BEGINNT MIT LEIDENSCHAFT",
     "headline": "In Siegen und Niederlagen stand unsere Gemeinschaft zusammen auf den Rängen.",
-    "p1": "Gegründet von einer Handvoll hingebungsvoller Fans, die eine tiefe Liebe zum Spiel und ihrer Heimatstadt teilen, ist der SupporterFC Meilen zu einem Eckpfeiler der lokalen Fussballkultur geworden. Was bei ein paar Bieren nach dem Spiel begann, hat sich zu einem Vermächtnis über ein halbes Jahrhundert entwickelt.",
+    "p1": "Gegründet von einer Handvoll hingebungsvoller Fans, die eine tiefe Liebe zum Spiel und ihrer Heimatstadt teilen, ist der Supporter FC Meilen zu einem Eckpfeiler der lokalen Fussballkultur geworden. Was bei ein paar Bieren nach dem Spiel begann, hat sich zu einem Vermächtnis über ein halbes Jahrhundert entwickelt.",
     "p2": "Von der Koordination unserer ersten Auswärtsfahrten in den späten 70ern bis hin zur Organisation massiver Choreografien in der modernen Ära bleibt unser Geist unverändert: bedingungslose Unterstützung."
   },
   "Timeline": {
@@ -115,9 +115,9 @@
     "subtitle": "Wir stehen für Tradition, lokalen Stolz und 90 Minuten bedingungslose lautstarke Unterstützung.",
     "foundationTitle": "Der Gründungsmythos",
     "foundationDesc1": "Im Herbst 1976 stand eine Gruppe von Freunden im Regen hinter dem Tor und sah zu, wie Meilen ein enges Spiel verlor. Anstatt zu gehen, begannen sie zu singen. Dieser einzige Akt des Widerstands gegen das Wetter und den Spielstand gebar eine Bewegung.",
-    "foundationDesc2": "Seit fünf Jahrzehnten ist der SupporterFC Meilen das schlagende Herz unseres Stadions. Wir sind nicht nur Fans; wir sind der 12. Mann. Wir organisieren die Choreografien, wir finanzieren die Auswärtsbusse und wir sorgen dafür, dass der Geist des lokalen Fussballs niemals stirbt.",
+    "foundationDesc2": "Seit fünf Jahrzehnten ist der Supporter FC Meilen das schlagende Herz unseres Stadions. Wir sind nicht nur Fans; wir sind der 12. Mann. Wir organisieren die Choreografien, wir finanzieren die Auswärtsbusse und wir sorgen dafür, dass der Geist des lokalen Fussballs niemals stirbt.",
     "solidarityTitle": "Gemeinschaft & Solidarität",
-    "solidarityDesc1": "Unser Club ist mehr als 90 Minuten an einem Samstag. Er ist eine Familie. SupporterFC Meilen organisiert aktiv Wohltätigkeitsveranstaltungen, Jugendturniere und lokale Gemeinschaftshilfe.",
+    "solidarityDesc1": "Unser Club ist mehr als 90 Minuten an einem Samstag. Er ist eine Familie. Supporter FC Meilen organisiert aktiv Wohltätigkeitsveranstaltungen, Jugendturniere und lokale Gemeinschaftshilfe.",
     "solidarityDesc2": "Wir glauben, dass Fussball den Menschen gehört. Wir lehnen die Hyper-Kommerzialisierung des Sports ab und kämpfen dafür, die Ticketpreise erschwinglich zu halten, damit jeder in Meilen, unabhängig vom Hintergrund, mit uns auf den Rängen stehen kann.",
     "pillarsTitle": "Die drei Säulen",
     "pillar1Title": "Loyalität",
@@ -129,7 +129,7 @@
     "president": {
       "overline": "Führung",
       "title": "Unser Präsident",
-      "name": "Dr. Sanji Lingam MBA",
+      "name": "Dr. Sanji Lingam",
       "bio": "Die Nachwuchsförderung ist die Investition in die Zukunft unseres Vereins. Gemeinsam mit unseren Mitgliedern und Partnern schaffen wir nachhaltige Perspektiven für den FC Meilen",
       "contact": "sanji@lingamdynasty.ch"
     },
@@ -173,7 +173,7 @@
   },
   "BlogPage": {
     "title": "Geschichten",
-    "subtitle": "Spielberichte, Erbe-Einblicke und Ankündigungen der SupporterFC Meilen Gemeinschaft.",
+    "subtitle": "Spielberichte, Erbe-Einblicke und Ankündigungen der Supporter FC Meilen Gemeinschaft.",
     "noImage": "Kein Bild",
     "uncategorized": "Unkategorisiert",
     "readArticle": "Artikel lesen",
@@ -215,7 +215,7 @@
     "overline": "Mitgliedschaft",
     "title": "Werde ein",
     "titleHighlight": "Supporter",
-    "subtitle": "Werde Teil der SupporterFC Meilen Familie. Als registriertes Mitglied finanzierst du direkt unsere Choreografien, Auswärtsbusse und den Kampf für authentischen Fussball.",
+    "subtitle": "Werde Teil der Supporter FC Meilen Familie. Als registriertes Mitglied finanzierst du direkt unsere Choreografien, Auswärtsbusse und den Kampf für authentischen Fussball.",
     "standardTitle": "Standard Mitglied",
     "standardDesc": "50 CHF / Jahr. Stimmrecht an der Generalversammlung und Priorität bei Auswärtstickets.",
     "lifetimeTitle": "Lebenslange Mitgliedschaft",

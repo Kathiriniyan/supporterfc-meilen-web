@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props) {
   }).catch(() => null);
 
   if (!post) return { title: 'News Not Found' };
-  return { title: `${getLocalized(post.title, resolvedParams.locale)} - SupporterFC Meilen News` };
+  return { title: `${getLocalized(post.title, resolvedParams.locale)} - Supporter FC Meilen News` };
 }
 
 export default async function NewsDetail({ params }: Props) {

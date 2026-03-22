@@ -30,8 +30,8 @@ export async function generateMetadata() {
     console.error('Failed to fetch site settings for metadata:', error);
   }
 
-  const title = settings?.heroTitle || 'SupporterFC Meilen - 50th Anniversary';
-  const description = 'Celebrating 50 years of SupporterFC Meilen history, community, and unconditional support.';
+  const title = settings?.heroTitle || 'Supporter FC Meilen - 50th Anniversary';
+  const description = 'Celebrating 50 years of Supporter FC Meilen history, community, and unconditional support.';
   const ogImage = settings?.heroImage ? urlFor(settings.heroImage).url() : '';
 
   return {

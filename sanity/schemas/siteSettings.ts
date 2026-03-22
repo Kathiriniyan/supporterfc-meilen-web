@@ -9,7 +9,7 @@ export const siteSettings = defineType({
       name: 'heroTitle',
       title: 'Hero Heading',
       type: 'string',
-      description: 'Used on the homepage hero section (e.g., "50 Jahre SupporterFC Meilen")',
+      description: 'Used on the homepage hero section (e.g., "50 Jahre Supporter FC Meilen")',
     }),
     defineField({
       name: 'contactEmail',

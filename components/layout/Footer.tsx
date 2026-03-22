@@ -21,7 +21,7 @@ export function Footer() {
             <Link href="/" className="block">
               <Image
                 src="/logo.png"
-                alt="SupporterFC Meilen Logo"
+                alt="Supporter FC Meilen Logo"
                 width={200}
                 height={54}
                 className="h-12 w-auto object-contain"
@@ -47,7 +47,7 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="font-sans font-bold uppercase text-lg">{t('contact')}</h3>
             <address className="not-italic font-serif text-ink/70 flex flex-col gap-1">
-              <span>SupporterFC Meilen</span>
+              <span>Supporter FC Meilen</span>
               <span>Sportzentrum Allmend</span>
               <span>Burgstrasse 160, 8706 Meilen,</span>
               <a href="mailto:supporter@fcmeilen.ch" className="mt-2 text-ink hover:text-orange transition-colors">supporter@fcmeilen.ch</a>
@@ -71,7 +71,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-ink/10 flex flex-col md:flex-row items-center justify-between text-xs font-sans text-ink/50 uppercase">
-          <p>© {new Date().getFullYear()} SupporterFC Meilen. {tf('rights')}</p>
+          <p>© {new Date().getFullYear()} Supporter FC Meilen. {tf('rights')}</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-ink">{tf('privacy')}</Link>
             <Link href="/terms" className="hover:text-ink">{tf('terms')}</Link>

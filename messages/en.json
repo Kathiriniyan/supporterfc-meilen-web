@@ -11,14 +11,14 @@
         "contact": "Contact"
     },
     "Hero": {
-        "title": "50 Years SupporterFC Meilen",
+        "title": "50 Years Supporter FC Meilen",
         "subtitle": "A community of passion and tradition since 1976."
     },
     "Intro": {
         "year": "1976",
         "overline": "OUR HISTORY BEGINS WITH PASSION",
         "headline": "Through victories and defeats, our community stood together on the terraces.",
-        "p1": "Founded by a handful of devoted fans sharing a profound love for the game and their hometown, SupporterFC Meilen has grown into a cornerstone of local football culture. What began over a few beers post-match has evolved into a half-century legacy.",
+        "p1": "Founded by a handful of devoted fans sharing a profound love for the game and their hometown, Supporter FC Meilen has grown into a cornerstone of local football culture. What began over a few beers post-match has evolved into a half-century legacy.",
         "p2": "From coordinating our first away-day trips in the late 70s to organizing massive choreographies in the modern era, our spirit remains unchanged: unconditional support."
     },
     "Timeline": {
@@ -115,9 +115,9 @@
         "subtitle": "We stand for tradition, local pride, and 90 minutes of unconditional vocal support.",
         "foundationTitle": "The Founding Myth",
         "foundationDesc1": "In the autumn of 1976, a group of friends stood behind the goal in the rain, watching Meilen lose a tight game. Instead of leaving, they started singing. That single act of defiance against the weather and the scoreline birthed a movement.",
-        "foundationDesc2": "For five decades, SupporterFC Meilen has been the beating heart of our stadium. We aren't just fans; we are the 12th man. We organize the choreographies, we fund the away buses, and we ensure the spirit of local football never dies.",
+        "foundationDesc2": "For five decades, Supporter FC Meilen has been the beating heart of our stadium. We aren't just fans; we are the 12th man. We organize the choreographies, we fund the away buses, and we ensure the spirit of local football never dies.",
         "solidarityTitle": "Community & Solidarity",
-        "solidarityDesc1": "Our club is more than 90 minutes on a Saturday. It is a family. SupporterFC Meilen actively organizes charitable events, youth tournaments, and local community aid.",
+        "solidarityDesc1": "Our club is more than 90 minutes on a Saturday. It is a family. Supporter FC Meilen actively organizes charitable events, youth tournaments, and local community aid.",
         "solidarityDesc2": "We believe football belongs to the people. We reject the hyper-commercialization of the sport and fight to keep ticket prices accessible so that everyone in Meilen, regardless of background, can stand on the terraces with us.",
         "pillarsTitle": "The Three Pillars",
         "pillar1Title": "Loyalty",
@@ -129,7 +129,7 @@
         "president": {
             "overline": "Leadership",
             "title": "Our President",
-            "name": "Dr. Sanji Lingam MBA",
+            "name": "Dr. Sanji Lingam",
             "bio": "Youth development is an investment in the future of our club.Together with our members and partners, we create sustainable prospects for FC Meilen.",
             "contact": "sanji@lingamdynasty.ch"
         },
@@ -173,7 +173,7 @@
     },
     "BlogPage": {
         "title": "Stories",
-        "subtitle": "Match reports, heritage deep-dives, and announcements from the SupporterFC Meilen community.",
+        "subtitle": "Match reports, heritage deep-dives, and announcements from the Supporter FC Meilen community.",
         "noImage": "No Image",
         "uncategorized": "Uncategorized",
         "readArticle": "Read Article",
@@ -215,7 +215,7 @@
         "overline": "Membership",
         "title": "Become a",
         "titleHighlight": "Supporter",
-        "subtitle": "Join the SupporterFC Meilen family. By becoming a registered member, you directly fund our choreographies, away buses, and the ongoing fight to keep football authentic.",
+        "subtitle": "Join the Supporter FC Meilen family. By becoming a registered member, you directly fund our choreographies, away buses, and the ongoing fight to keep football authentic.",
         "standardTitle": "Standard Member",
         "standardDesc": "50 CHF / Year. Voting rights at the general assembly and priority ticketing for away derbies.",
         "lifetimeTitle": "Lifetime Legacy",

@@ -64,7 +64,7 @@ export function Navbar() {
           <Link href="/" className="block">
             <Image
               src="/logo.png"
-              alt="SupporterFC Meilen Logo"
+              alt="Supporter FC Meilen Logo"
               width={180}
               height={48}
               className="h-10 md:h-12 w-auto object-contain"

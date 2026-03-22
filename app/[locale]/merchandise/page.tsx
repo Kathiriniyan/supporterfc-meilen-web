@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'MerchPage' });
   return {
-    title: `${t('title')} - SupporterFC Meilen`,
+    title: `${t('title')} - Supporter FC Meilen`,
     description: t('subtitle'),
   };
 }

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props) {
   }).catch(() => null);
 
   if (!post) return { title: 'Post Not Found' };
-  return { title: `${getLocalized(post.title, resolvedParams.locale)} - SupporterFC Meilen` };
+  return { title: `${getLocalized(post.title, resolvedParams.locale)} - Supporter FC Meilen` };
 }
 
 export default async function BlogPostPage({ params }: Props) {

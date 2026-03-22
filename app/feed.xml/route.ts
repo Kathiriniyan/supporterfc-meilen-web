@@ -42,7 +42,7 @@ export async function GET() {
     const rssData = `<?xml version="1.0" encoding="UTF-8" ?>
       <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
         <channel>
-          <title>SupporterFC Meilen News</title>
+          <title>Supporter FC Meilen News</title>
           <link>${baseUrl}</link>
           <description>Latest match reports, stories, and club updates.</description>
           <language>en</language>

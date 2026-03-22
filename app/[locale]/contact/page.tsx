@@ -151,7 +151,7 @@ export default function ContactPage() {
               <p className="font-sans font-black uppercase text-ink/40 text-xs tracking-[0.2em] mb-4">
                 {t('addressTitle')}
               </p>
-              <p className="text-ink font-black uppercase font-sans">SupporterFC Meilen</p>
+              <p className="text-ink font-black uppercase font-sans">Supporter FC Meilen</p>
               <p>Sportzentrum Allmend</p>
               <p>Burgstrasse 160, 8706 Meilen,</p>
               <p>Switzerland</p>

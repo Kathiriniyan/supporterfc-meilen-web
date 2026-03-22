@@ -9,7 +9,7 @@ const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET?.trim() || 'production';
 export const config = defineConfig({
   projectId,
   dataset,
-  title: 'SupporterFC Meilen Studio',
+  title: 'Supporter FC Meilen Studio',
   basePath: '/studio',
   plugins: [
     deskTool({
