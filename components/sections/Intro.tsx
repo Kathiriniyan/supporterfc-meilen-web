@@ -37,7 +37,7 @@ export function AnniversaryIntro() {
             <p className="font-sans font-bold uppercase tracking-widest text-orange text-sm md:text-base">
               {t('overline')}
             </p>
-            <h3 className="font-serif text-3xl md:text-5xl leading-tight text-ink font-semibold italic">
+            <h3 className="font-serif text-2xl md:text-3xl leading-snug text-ink font-semibold italic">
               {t('headline')}
             </h3>
             <div className="font-serif text-lg md:text-xl text-ink/80 leading-relaxed space-y-6">
