@@ -69,6 +69,9 @@
     "newsletterDesc": "Bleiben Sie auf dem Laufenden mit unseren neuesten Nachrichten und Veranstaltungen.",
     "emailPlaceholder": "E-Mail-Adresse",
     "subscribe": "Abonnieren",
+    "submitting": "Wird abonniert...",
+    "success": "Erfolgreich für den Newsletter angemeldet!",
+    "error": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut.",
     "rights": "Alle Rechte vorbehalten.",
     "privacy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen"

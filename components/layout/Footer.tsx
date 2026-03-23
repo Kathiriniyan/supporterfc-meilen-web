@@ -11,6 +11,30 @@ export function Footer() {
   const t = useTranslations('Navigation');
   const tf = useTranslations('Footer');
 
+  const [email, setEmail] = React.useState('');
+  const [status, setStatus] = React.useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) throw new Error('Failed');
+      setStatus('success');
+      setEmail('');
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
+    }
+  };
+
   return (
     <footer className="bg-cream border-t border-ink/20 pt-20 pb-10 mt-auto">
       <Container>
@@ -58,13 +82,32 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="font-sans font-bold uppercase text-lg">{tf('newsletterTitle')}</h3>
             <p className="font-serif text-ink/70 text-sm">{tf('newsletterDesc')}</p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder={tf('emailPlaceholder')}
-                className="flex-1 bg-vintage border border-ink/20 px-4 py-2 text-sm focus:outline-none focus:border-ink font-sans placeholder:text-ink/40"
-              />
-              <Button type="submit" variant="default" size="sm">{tf('subscribe')}</Button>
+            <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder={tf('emailPlaceholder')}
+                  required
+                  disabled={status === 'loading'}
+                  className="flex-1 bg-vintage border border-ink/20 px-4 py-2 text-sm focus:outline-none focus:border-ink font-sans placeholder:text-ink/40 disabled:opacity-50"
+                />
+                <Button
+                  type="submit"
+                  variant="default"
+                  size="sm"
+                  disabled={status === 'loading'}
+                >
+                  {status === 'loading' ? tf('submitting') : tf('subscribe')}
+                </Button>
+              </div>
+              {status === 'success' && (
+                <p className="text-sm text-green-600 font-sans mt-1">{tf('success')}</p>
+              )}
+              {status === 'error' && (
+                <p className="text-sm text-red-600 font-sans mt-1">{tf('error')}</p>
+              )}
             </form>
           </div>
 
