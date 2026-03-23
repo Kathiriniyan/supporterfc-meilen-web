@@ -183,7 +183,7 @@
   "MerchPage": {
     "overline": "Fanartikel",
     "title": "Trage die Farben",
-    "subtitle": "Jeder Kauf finanziert direkt Stadion-Choreografien, Auswärtsfahrten und Gemeinschaftsinitiativen. Keine Profitmentalität."
+    "subtitle": "Mit jedem Beitrag unterstützt du direkt unsere Junioren und den FC Meilen. Du ermöglichst Fussballcamps, Turniere, Ausrüstung und wichtige Vereinsarbeit. Keine Profitmentalität – nur Leidenschaft für unseren Club und seine Zukunft."
   },
   "MerchDetail": {
     "backToShop": "Alle Fanartikel ansehen",
@@ -215,9 +215,9 @@
     "titleHighlight": "Supporter",
     "subtitle": "Werde Teil der Supporter FC Meilen Familie. Als registriertes Mitglied finanzierst du direkt unsere Choreografien, Auswärtsbusse und den Kampf für authentischen Fussball.",
     "standardTitle": "Standard Mitglied",
-    "standardDesc": "100 CHF / Jahr. Stimmrecht an der Generalversammlung und Priorität bei Auswärtstickets.",
+    "standardDesc": "100 CHF / Jahr. Stimmrecht an der Generalversammlung.",
     "lifetimeTitle": "Lebenslange Mitgliedschaft",
-    "lifetimeDesc": "1000 CHF / Einmalig. Verewigt auf der Stadionplakette, exklusiver Legacy-Schal und lebenslanges Stimmrecht.",
+    "lifetimeDesc": "Mit einem einmaligen Beitrag von CHF 1’000.– erhalten Sie eine exklusive Mitgliedschaft inkl. Jubiläumsset \"50 Jahre\" sowie lebenslangem Stimmrecht – und unterstützen nachhaltig den FC Meilen.",
     "formTitle": "Anmeldeformular",
     "nameLabel": "Vollständiger Name *",
     "emailLabel": "E-Mail-Adresse *",

@@ -183,7 +183,7 @@
     "MerchPage": {
         "overline": "Merchandise",
         "title": "Wear The Colours",
-        "subtitle": "Every purchase goes directly into funding stadium choreographies, away trips, and our community initiatives. No profit mentality."
+        "subtitle": "With every contribution, you directly support our juniors and FC Meilen. You make football camps, tournaments, equipment, and essential club work possible. No profit mentality – just passion for our club and its future."
     },
     "MerchDetail": {
         "backToShop": "Shop All Gear",
@@ -215,9 +215,9 @@
         "titleHighlight": "Supporter",
         "subtitle": "Join the Supporter FC Meilen family. By becoming a registered member, you directly fund our choreographies, away buses, and the ongoing fight to keep football authentic.",
         "standardTitle": "Standard Member",
-        "standardDesc": "100 CHF / Year. Voting rights at the general assembly and priority ticketing for away derbies.",
+        "standardDesc": "100 CHF / Year. Voting rights at the general assembly.",
         "lifetimeTitle": "Lifetime Legacy",
-        "lifetimeDesc": "1000 CHF / Once. Immortalized on the stadium plaque, exclusive legacy scarf, and life-long AGM voting rights.",
+        "lifetimeDesc": "With a one-time contribution of CHF 1,000.–, you will receive an exclusive membership including the \"50 Years\" anniversary set as well as lifetime voting rights – and provide sustainable support for FC Meilen.",
         "formTitle": "Registration Form",
         "nameLabel": "Full Name *",
         "emailLabel": "Email Address *",
