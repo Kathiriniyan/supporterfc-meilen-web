@@ -40,6 +40,36 @@ export const post = defineType({
       options: {
         hotspot: true,
       },
+      hidden: ({ document }) => document?.mediaType !== 'image' && document?.mediaType !== undefined,
+    }),
+    defineField({
+      name: 'mediaType',
+      title: 'Media Type',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Image', value: 'image' },
+          { title: 'Video (Upload)', value: 'video' },
+          { title: 'YouTube Link', value: 'youtube' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'image',
+    }),
+    defineField({
+      name: 'coverVideo',
+      title: 'Cover Video',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+      hidden: ({ document }) => document?.mediaType !== 'video',
+    }),
+    defineField({
+      name: 'youtubeLink',
+      title: 'YouTube Link',
+      type: 'url',
+      hidden: ({ document }) => document?.mediaType !== 'youtube',
     }),
     defineField({
       name: 'excerpt',

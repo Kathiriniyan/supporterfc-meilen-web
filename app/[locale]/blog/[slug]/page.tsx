@@ -39,7 +39,7 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) {
     return (
       <div className="pt-32 pb-24 bg-vintage min-h-screen">
-        <Container className="max-w-4xl">
+        <Container className="max-w-7xl">
           <Link href="/blog" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
             <ArrowLeft size={16} /> {t('backToStories')}
           </Link>
@@ -53,7 +53,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <article className="pt-32 pb-24 bg-vintage min-h-screen">
-      <Container className="max-w-4xl">
+      <Container className="max-w-7xl">
         <Link href="/blog" className="inline-flex items-center gap-2 font-sans text-sm font-bold uppercase text-ink/60 hover:text-orange mb-12 transition-colors">
           <ArrowLeft size={16} /> {t('backToStories')}
         </Link>
@@ -83,17 +83,46 @@ export default async function BlogPostPage({ params }: Props) {
           )}
         </header>
 
-        {post.coverImage && (
-          <div className="aspect-[21/9] w-full relative mb-16 border border-ink/20 bg-cream mix-blend-multiply flex items-center justify-center">
-            <Image
-              src={urlFor(post.coverImage).url()}
-              alt={getLocalized(post.title, resolvedParams.locale)}
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              priority
-            />
-          </div>
-        )}
+        {(() => {
+          if (post.mediaType === 'youtube' && post.youtubeLink) {
+            const videoId = post.youtubeLink.split('v=')[1]?.split('&')[0] || post.youtubeLink.split('/').pop() || '';
+            if (videoId) {
+              return (
+                <div className="aspect-[21/9] w-full relative mb-16 border border-ink/20 bg-ink">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
+                  ></iframe>
+                </div>
+              );
+            }
+          }
+          if (post.mediaType === 'video' && post.coverVideoUrl) {
+            return (
+              <div className="aspect-[21/9] w-full relative mb-16 border border-ink/20 bg-ink">
+                <video src={post.coverVideoUrl} autoPlay loop muted playsInline controls className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+              </div>
+            );
+          }
+          if (post.coverImage) {
+            return (
+              <div className="aspect-[21/9] w-full relative mb-16 border border-ink/20 bg-cream mix-blend-multiply flex items-center justify-center">
+                <Image
+                  src={urlFor(post.coverImage).url()}
+                  alt={getLocalized(post.title, resolvedParams.locale)}
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  priority
+                />
+              </div>
+            );
+          }
+          return null;
+        })()}
 
         <div className="prose prose-lg lg:prose-xl max-w-none text-ink/90">
           {post.content ? <RichText content={post.content} /> : (

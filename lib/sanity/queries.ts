@@ -5,7 +5,10 @@ export const BLOG_LIST_QUERY = groq`*[_type == "post"] | order(publishedAt desc)
   title,
   slug,
   excerpt,
+  mediaType,
   coverImage,
+  "coverVideoUrl": coverVideo.asset->url,
+  youtubeLink,
   publishedAt,
   category->{title}
 }`;
@@ -15,7 +18,10 @@ export const BLOG_DETAIL_QUERY = groq`*[_type == "post" && slug.current == $slug
   title,
   slug,
   excerpt,
+  mediaType,
   coverImage,
+  "coverVideoUrl": coverVideo.asset->url,
+  youtubeLink,
   publishedAt,
   content,
   author->{name, image, bio},

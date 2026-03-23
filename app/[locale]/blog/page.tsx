@@ -50,13 +50,36 @@ export default async function BlogPage({ params }: Props) {
           {posts.map((post) => (
             <Link key={post._id} href={`/blog/${post.slug.current}`} className="group block bg-vintage border border-ink/20 hover:border-ink hover:shadow-[8px_8px_0_0_#F5A900] transition-all duration-300 pb-6 flex flex-col h-full">
               <div className="aspect-[4/3] w-full bg-ink/5 mb-6 overflow-hidden border-b border-ink/20 grayscale group-hover:grayscale-0 transition-all duration-500 relative">
-                {post.coverImage ? (
-                  <Image src={urlFor(post.coverImage).url()} alt={getLocalized(post.title, locale)} fill className="object-cover" />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center font-sans uppercase font-bold text-ink/20 text-sm tracking-widest">
-                    {t('noImage')}
-                  </div>
-                )}
+                {(() => {
+                  if (post.mediaType === 'youtube' && post.youtubeLink) {
+                    const videoId = post.youtubeLink.split('v=')[1]?.split('&')[0] || post.youtubeLink.split('/').pop() || '';
+                    if (videoId) {
+                      return (
+                        <div className="w-full h-full relative">
+                          <Image src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`} alt={getLocalized(post.title, locale)} fill className="object-cover" unoptimized />
+                          <div className="absolute inset-0 flex items-center justify-center bg-ink/30 mt-[2px]">
+                            <div className="w-16 h-12 bg-orange rounded-xl flex items-center justify-center text-cream">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                  }
+                  if (post.mediaType === 'video' && post.coverVideoUrl) {
+                    return <video src={post.coverVideoUrl} autoPlay loop muted playsInline className="w-full h-full object-cover" />;
+                  }
+                  if (post.coverImage) {
+                    return <Image src={urlFor(post.coverImage).url()} alt={getLocalized(post.title, locale)} fill className="object-cover" />;
+                  }
+                  return (
+                    <div className="w-full h-full flex items-center justify-center font-sans uppercase font-bold text-ink/20 text-sm tracking-widest">
+                      {t('noImage')}
+                    </div>
+                  );
+                })()}
               </div>
               <div className="px-6 flex flex-col flex-1">
                 <span className="font-sans text-xs font-bold uppercase text-orange tracking-widest block mb-2">
