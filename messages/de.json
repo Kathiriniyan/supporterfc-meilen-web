@@ -12,7 +12,12 @@
   },
   "Hero": {
     "title": "50 Jahre Supporter FC Meilen",
-    "subtitle": "Eine Gemeinschaft von Leidenschaft und Tradition seit 1976."
+    "subtitle": "Eine Gemeinschaft von Leidenschaft und Tradition seit 1976.",
+    "countdownPretext": "Zeit bis zum 50. Jubiläum",
+    "days": "Tage",
+    "hours": "Std",
+    "minutes": "Min",
+    "seconds": "Sek"
   },
   "Intro": {
     "year": "1976",

@@ -12,7 +12,12 @@
     },
     "Hero": {
         "title": "50 Years Supporter FC Meilen",
-        "subtitle": "A community of passion and tradition since 1976."
+        "subtitle": "A community of passion and tradition since 1976.",
+        "countdownPretext": "Time until 50th Anniversary",
+        "days": "Days",
+        "hours": "Hrs",
+        "minutes": "Min",
+        "seconds": "Sec"
     },
     "Intro": {
         "year": "1976",

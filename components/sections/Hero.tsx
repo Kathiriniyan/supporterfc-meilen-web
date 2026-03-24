@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { useTranslations } from 'next-intl';
 import { Container } from '../layout/Container';
 import Image from 'next/image';
+import { Countdown } from '../ui/Countdown';
 
 interface HeroProps {
   title?: string;
@@ -19,6 +20,7 @@ export function HeroSection({ title: propTitle, subtitle: propSubtitle }: HeroPr
   const containerRef = React.useRef<HTMLDivElement>(null);
   const boxRef = React.useRef<HTMLDivElement>(null);
   const textRef = React.useRef<HTMLHeadingElement>(null);
+  const countdownRef = React.useRef<HTMLDivElement>(null);
   const logoRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -27,6 +29,7 @@ export function HeroSection({ title: propTitle, subtitle: propSubtitle }: HeroPr
 
       gsap.set(boxRef.current, { y: 100, opacity: 0, scale: 0.95 });
       gsap.set(textRef.current, { opacity: 0, y: 30 });
+      gsap.set(countdownRef.current, { opacity: 0, y: 20 });
       gsap.set(logoRef.current, { opacity: 0, scale: 0.5, rotate: -20 });
 
       tl.to(boxRef.current, {
@@ -44,6 +47,15 @@ export function HeroSection({ title: propTitle, subtitle: propSubtitle }: HeroPr
           ease: 'power3.out',
         },
         '-=0.6'
+      ).to(
+        countdownRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'back.out(1.2)',
+        },
+        '-=0.8'
       ).to(
         logoRef.current,
         {
@@ -90,18 +102,21 @@ export function HeroSection({ title: propTitle, subtitle: propSubtitle }: HeroPr
           />
 
           {/* Layer 4: Content */}
-          <div className="relative z-30 text-center px-6 max-w-5xl">
-            <h1
-              ref={textRef}
-              className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-sans font-black uppercase tracking-tighter leading-[0.85] text-cream drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]"
-            >
-              {title}
-            </h1>
-            {subtitle && (
-              <p className="mt-8 font-serif text-xl md:text-2xl lg:text-3xl text-cream/80 max-w-2xl mx-auto italic drop-shadow-md">
-                {subtitle}
-              </p>
-            )}
+          <div className="relative z-30 text-center px-6 max-w-5xl flex flex-col items-center">
+            <div ref={textRef}>
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-sans font-black uppercase tracking-tighter leading-[0.85] text-cream drop-shadow-[0_5px_15px_rgba(0,0,0,0.5)]">
+                {title}
+              </h1>
+              {subtitle && (
+                <p className="mt-8 font-serif text-xl md:text-2xl lg:text-3xl text-cream/80 max-w-2xl mx-auto italic drop-shadow-md">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+
+            <div ref={countdownRef} className="w-full">
+              <Countdown />
+            </div>
           </div>
 
           {/* Decorative Corner Accents */}
@@ -125,6 +140,6 @@ export function HeroSection({ title: propTitle, subtitle: propSubtitle }: HeroPr
           </div>
         </div>
       </Container>
-    </section>
+    </section >
   );
 }
