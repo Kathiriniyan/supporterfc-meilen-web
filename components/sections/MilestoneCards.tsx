@@ -21,17 +21,17 @@ export function MilestoneCards() {
                     {milestones.map((m, i) => (
                         <div
                             key={i}
-                            className={`p-10 md:p-16 flex flex-col justify-between aspect-square md:aspect-auto min-h-[400px] transition-transform hover:-translate-y-2 duration-300 ${m.color}`}
+                            className={`p-6 sm:p-8 md:p-16 flex flex-col justify-between md:aspect-auto min-h-[300px] md:min-h-[400px] transition-transform hover:-translate-y-2 duration-300 ${m.color}`}
                         >
                             <div>
-                                <span className="font-sans font-black text-6xl md:text-8xl opacity-20 block mb-6">
+                                <span className="font-sans font-black text-5xl md:text-8xl opacity-20 block mb-4 md:mb-6">
                                     {m.year}
                                 </span>
-                                <h3 className="text-3xl md:text-5xl font-sans font-black uppercase leading-none mb-6">
+                                <h3 className="text-2xl sm:text-3xl md:text-5xl font-sans font-black uppercase leading-none mb-4 md:mb-6">
                                     {m.title}
                                 </h3>
                             </div>
-                            <p className="font-serif text-lg md:text-xl leading-relaxed">
+                            <p className="font-serif text-base sm:text-lg md:text-xl leading-relaxed">
                                 {m.desc}
                             </p>
                         </div>

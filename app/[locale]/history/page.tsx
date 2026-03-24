@@ -14,13 +14,13 @@ export default function HistoryPage() {
             <MilestoneCards />
 
             {/* Archive Call to Action */}
-            <section className="py-32 bg-vintage text-center border-t border-ink/20">
+            <section className="py-16 md:py-32 bg-vintage text-center border-t border-ink/20">
                 <Container>
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-4xl md:text-6xl font-sans font-black uppercase text-ink mb-12 leading-tight">
+                        <h2 className="text-3xl md:text-6xl font-sans font-black uppercase text-ink mb-8 md:mb-12 leading-tight">
                             {t('cta')}
                         </h2>
-                        <Button asChild variant="brutalist" size="lg" className="scale-110">
+                        <Button asChild variant="brutalist" size="lg" className="scale-100 md:scale-110">
                             <Link href="/join">{t('cta').split(' ').slice(0, 2).join(' ')}</Link>
                         </Button>
                     </div>
