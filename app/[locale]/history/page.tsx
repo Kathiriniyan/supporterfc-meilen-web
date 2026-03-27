@@ -4,6 +4,27 @@ import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
+
+interface Props {
+    params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: Props) {
+    const { locale } = await params;
+    const isDE = locale === 'de';
+
+    return {
+        title: isDE ? 'Geschichte – 50 Jahre FC Meilen' : 'History – 50 Years of FC Meilen',
+        description: isDE
+            ? 'Entdecken Sie die Geschichte der Supporter Vereinigung FC Meilen von 1976 bis heute.'
+            : 'Explore the history of Supporter FC Meilen from 1976 to the present day.',
+        alternates: {
+            canonical: `https://www.supporterfcmeilen.ch/${locale}/history`,
+            languages: { en: 'https://www.supporterfcmeilen.ch/en/history', de: 'https://www.supporterfcmeilen.ch/de/history' },
+        },
+    };
+}
 
 export default function HistoryPage() {
     const t = useTranslations('HistoryPage');
