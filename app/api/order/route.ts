@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import { buildEmailHtml, tableRow, dataTable } from '../_lib/emailTemplate';
 
 export async function POST(req: Request) {
     try {
@@ -11,55 +12,61 @@ export async function POST(req: Request) {
         }
 
         const transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com', // Replace with your SMTP host
-            port: 587,
+            host: process.env.EMAIL_HOST || 'tertia.sui-inter.net',
+            port: Number(process.env.EMAIL_PORT) || 465,
+            secure: true,
             auth: {
                 user: process.env.EMAIL_USER || '',
                 pass: process.env.EMAIL_PASS || '',
             },
         });
 
-        // Email to the Admin
+        // E-Mail an Admin
         const adminMailOptions = {
             from: process.env.EMAIL_USER || 'noreply@supporterfc-meilen.ch',
             to: process.env.EMAIL_USER || 'admin@supporterfc-meilen.ch',
-            subject: `New Merchandise Order: ${productName} from ${name}`,
-            text: `You have a new merchandise order request.\n\nProduct: ${productName}\nSize: ${size}\nPrice: CHF ${productPrice}\n\nCustomer Details:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nAddress: ${address}`,
-            html: `
-        <h2>New Merchandise Order Request</h2>
-        <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse;">
-          <tr><td><strong>Product:</strong></td><td>${productName}</td></tr>
-          <tr><td><strong>Size:</strong></td><td>${size}</td></tr>
-          <tr><td><strong>Price:</strong></td><td>CHF ${productPrice}</td></tr>
-          <tr><td><strong>Name:</strong></td><td>${name}</td></tr>
-          <tr><td><strong>Email:</strong></td><td>${email}</td></tr>
-          <tr><td><strong>Phone:</strong></td><td>${phone || 'N/A'}</td></tr>
-        </table>
-        <h3>Shipping Address:</h3>
-        <p style="white-space: pre-wrap;">${address}</p>
-      `,
+            subject: `Neue Merchandise-Bestellung: ${productName} von ${name}`,
+            text: `Neue Merchandise-Bestellanfrage eingegangen.\n\nProdukt: ${productName}\nGrösse: ${size}\nPreis: CHF ${productPrice}\n\nKundendaten:\nName: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\nAdresse: ${address}`,
+            html: buildEmailHtml({
+                title: 'Neue Merchandise-Bestellanfrage',
+                body: `
+                    <p>Eine neue Bestellanfrage ist über <a href="https://www.supporterfcmeilen.ch" style="color: #FF5A00; font-weight: bold;">www.supporterfcmeilen.ch</a> eingegangen.</p>
+                    ${dataTable(
+                    tableRow('Produkt', productName) +
+                    tableRow('Grösse', size) +
+                    tableRow('Preis', `CHF ${productPrice}`) +
+                    tableRow('Name', name) +
+                    tableRow('E-Mail', email) +
+                    tableRow('Telefon', phone || 'Keine Angabe')
+                )}
+                    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-bottom: 8px;">Lieferadresse:</p>
+                    <div style="background-color: #F5F0E8; padding: 16px 20px; border-left: 4px solid #D4AF37; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${address}</div>
+                `,
+            }),
         };
 
-        // Confirmation Email to the User
+        // Bestätigungs-E-Mail an den Benutzer
         const userMailOptions = {
             from: process.env.EMAIL_USER || 'noreply@supporterfc-meilen.ch',
             to: email,
-            subject: `Order Confirmation: ${productName} - Supporter FC Meilen`,
-            text: `Hello ${name},\n\nThank you for your order request for ${productName} (Size: ${size}).\n\nWe will review your request and contact you shortly with payment details.\n\nShipping Address:\n${address}\n\nBest regards,\nSupporter FC Meilen`,
-            html: `
-        <h2 style="color: #FF5A00; text-transform: uppercase;">Supporter FC Meilen</h2>
-        <h3>Order Confirmation Request</h3>
-        <p>Hello <strong>${name}</strong>,</p>
-        <p>Thank you for supporting the club! We have received your order request.</p>
-        <table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse;">
-          <tr><td><strong>Product:</strong></td><td>${productName}</td></tr>
-          <tr><td><strong>Size:</strong></td><td>${size}</td></tr>
-          <tr><td><strong>Price:</strong></td><td>CHF ${productPrice}</td></tr>
-        </table>
-        <p><strong>Shipping Address:</strong><br/>${address}</p>
-        <p>We will review your request and get back to you shortly with payment instructions.</p>
-        <p><i>Against Modern Football.</i></p>
-      `,
+            subject: `Bestellbestätigung: ${productName} – Supporter FC Meilen`,
+            text: `Hallo ${name},\n\nVielen Dank für Ihre Bestellanfrage für ${productName} (Grösse: ${size}).\n\nWir werden Ihre Anfrage prüfen und uns in Kürze mit den Zahlungsdetails bei Ihnen melden.\n\nLieferadresse:\n${address}\n\nFreundliche Grüsse,\nSupporter FC Meilen`,
+            html: buildEmailHtml({
+                title: 'Bestellbestätigung',
+                body: `
+                    <p>Hallo <strong>${name}</strong>,</p>
+                    <p>Vielen Dank für Ihre Unterstützung des Vereins! Wir haben Ihre Bestellanfrage erhalten.</p>
+                    ${dataTable(
+                    tableRow('Produkt', productName) +
+                    tableRow('Grösse', size) +
+                    tableRow('Preis', `CHF ${productPrice}`)
+                )}
+                    <p style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-bottom: 8px;">Lieferadresse:</p>
+                    <div style="background-color: #F5F0E8; padding: 16px 20px; border-left: 4px solid #D4AF37; font-size: 15px; line-height: 1.7; white-space: pre-wrap;">${address}</div>
+                    <p style="margin-top: 24px;">Wir werden Ihre Anfrage prüfen und uns in Kürze mit den Zahlungsanweisungen bei Ihnen melden.</p>
+                    <p style="color: #888; font-style: italic;">Gegen modernen Fussball.</p>
+                `,
+            }),
         };
 
         if (!process.env.EMAIL_USER) {
@@ -82,7 +89,6 @@ export async function POST(req: Request) {
             console.log('User confirmation email sent successfully');
         } catch (error) {
             console.warn('Failed to send user confirmation email (order was still processed):', error);
-            // We return 200 because the admin already received the order
             return NextResponse.json({
                 message: 'Success',
                 warning: 'Confirmation email failed to send'
@@ -99,3 +105,4 @@ export async function POST(req: Request) {
         }, { status: 500 });
     }
 }
+
