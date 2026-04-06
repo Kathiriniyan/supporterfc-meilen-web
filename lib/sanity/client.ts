@@ -14,6 +14,6 @@ export const client = createClient({
   projectId: projectId || 'eqe2jz7p',
   dataset: dataset || 'production',
   apiVersion: '2024-01-01',
-  useCdn: token ? false : true, // Use CDN for public, direct for authenticated
+  useCdn: true, // Use CDN to reduce Sanity load and improve speed
   token,
 });
